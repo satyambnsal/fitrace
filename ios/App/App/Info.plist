@@ -5,7 +5,7 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleDisplayName</key>
-        <string>dojo-mobile-game</string>
+	<string>dojo-mobile-game</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -29,6 +29,7 @@
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>
+		<string></string>
 	</array>
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
@@ -45,5 +46,11 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<true/>
+    <key>NSCameraUsageDescription</key>
+    <string>This app needs access to your camera to scan wallet keys</string>
+    <key>NSPhotoLibraryAddUsageDescription</key>
+    <string>This app needs access to photo library to scan photos for wallet keys</string>
+    <key>NSPhotoLibraryUsageDescription</key>
+    <string>This app needs access to photo library to scan photos for wallet keys</string>
 </dict>
 </plist>

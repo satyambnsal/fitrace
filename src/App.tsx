@@ -8,14 +8,14 @@ import { useDojo } from './dojo/useDojo'
 import { DojoProvider } from './dojo/DojoContext'
 import { dojoConfig } from '../dojoConfig'
 import { setup } from './dojo/generated/setup'
-import { Block, Button } from 'konsta/react';
-import { App } from 'konsta/react';
-import Loading from "./components/Loading.tsx"
+import { Block, Button, App } from 'konsta/react'
+
+import Loading from './components/Loading.tsx'
 
 type SetupResultType = Awaited<ReturnType<typeof setup>>
 
 function MyApp() {
-  const [setupResult, setSetupResult] = useState<SetupResultType>({} as SetupResultType);
+  const [setupResult, setSetupResult] = useState<SetupResultType>({} as SetupResultType)
   useEffect(() => {
     setup(dojoConfig)
       .then((response) => {
@@ -28,18 +28,17 @@ function MyApp() {
   }, [])
   console.log('setup result', setupResult)
 
-  if(!setupResult.burnerManager){
+  if (!setupResult.burnerManager) {
     return <Loading />
   }
 
-    return (
-      <App>
-        <DojoProvider value={setupResult}>
-          <PositionGame />
-        </DojoProvider>
-      </App>
-
-    )
+  return (
+    <App>
+      <DojoProvider value={setupResult}>
+        <PositionGame />
+      </DojoProvider>
+    </App>
+  )
 }
 
 export const PositionGame = () => {
@@ -90,87 +89,85 @@ export const PositionGame = () => {
     }
   }, [clipboardStatus.message])
   return (
-
     <div>
-        <Button onClick={() => account?.create()}>
-          {account?.isDeploying ? 'deploying burner' : 'create burner'}
+      <Button onClick={() => account?.create()}>
+        {account?.isDeploying ? 'deploying burner' : 'create burner'}
+      </Button>
+      {account && account?.list().length > 0 && (
+        <Button onClick={async () => await account?.copyToClipboard()}>
+          Save Burners to Clipboard
         </Button>
-        {account && account?.list().length > 0 && (
-          <Button onClick={async () => await account?.copyToClipboard()}>
-            Save Burners to Clipboard
-          </Button>
-        )}
-        <Button onClick={handleRestoreBurners}>Restore Burners from Clipboard</Button>
-        {clipboardStatus.message && (
-          <div className={clipboardStatus.isError ? 'error' : 'success'}>
-            {clipboardStatus.message}
-          </div>
-        )}
+      )}
+      <Button onClick={handleRestoreBurners}>Restore Burners from Clipboard</Button>
+      {clipboardStatus.message && (
+        <div className={clipboardStatus.isError ? 'error' : 'success'}>
+          {clipboardStatus.message}
+        </div>
+      )}
 
-        <div className="card">
-          <div>{`burners deployed: ${account.count}`}</div>
-          <div>
+      <div className="card">
+        <div>{`burners deployed: ${account.count}`}</div>
+        <div>
           <Block>
-          <p>select signer:{' '}</p>
-        </Block>
-            
-            <select
-              value={account ? account.account.address : ''}
-              onChange={(e) => account.select(e.target.value)}
-            >
-              {account?.list().map((account, index) => {
-                return (
-                  <option value={account.address} key={index}>
-                    {account.address}
-                  </option>
-                )
-              })}
-            </select>
-          </div>
-          <div>
-            <Button onClick={() => account.clear()}>Clear burners</Button>
-            <p>You will need to Authorise the contracts before you can use a burner. See readme.</p>
-          </div>
-        </div>
+            <p>select signer: </p>
+          </Block>
 
-        <div className="card">
-          <Button onClick={() => spawn(account.account)}>Spawn</Button>
-          <div>Moves Left: {moves ? `${moves.remaining}` : 'Need to Spawn'}</div>
-          <div>Position: {position ? `${position.vec.x}, ${position.vec.y}` : 'Need to Spawn'}</div>
-
-          <div>{moves && moves.last_direction}</div>
+          <select
+            value={account ? account.account.address : ''}
+            onChange={(e) => account.select(e.target.value)}
+          >
+            {account?.list().map((account, index) => {
+              return (
+                <option value={account.address} key={index}>
+                  {account.address}
+                </option>
+              )
+            })}
+          </select>
         </div>
-
-        <div className="card">
-          <div>
-            <Button
-              onClick={() =>
-                position && position.vec.y > 0
-                  ? move(account.account, Direction.Up)
-                  : console.log('Reach the borders of the world.')
-              }
-            >
-              Move Up
-            </Button>
-          </div>
-          <div>
-            <Button
-              onClick={() =>
-                position && position.vec.x > 0
-                  ? move(account.account, Direction.Left)
-                  : console.log('Reach the borders of the world.')
-              }
-            >
-              Move Left
-            </Button>
-            <Button onClick={() => move(account.account, Direction.Right)}>Move Right</Button>
-          </div>
-          <div>
-            <Button onClick={() => move(account.account, Direction.Down)}>Move Down</Button>
-          </div>
+        <div>
+          <Button onClick={() => account.clear()}>Clear burners</Button>
+          <p>You will need to Authorise the contracts before you can use a burner. See readme.</p>
         </div>
+      </div>
+
+      <div className="card">
+        <Button onClick={() => spawn(account.account)}>Spawn</Button>
+        <div>Moves Left: {moves ? `${moves.remaining}` : 'Need to Spawn'}</div>
+        <div>Position: {position ? `${position.vec.x}, ${position.vec.y}` : 'Need to Spawn'}</div>
+
+        <div>{moves && moves.last_direction}</div>
+      </div>
+
+      <div className="card">
+        <div>
+          <Button
+            onClick={() =>
+              position && position.vec.y > 0
+                ? move(account.account, Direction.Up)
+                : console.log('Reach the borders of the world.')
+            }
+          >
+            Move Up
+          </Button>
+        </div>
+        <div>
+          <Button
+            onClick={() =>
+              position && position.vec.x > 0
+                ? move(account.account, Direction.Left)
+                : console.log('Reach the borders of the world.')
+            }
+          >
+            Move Left
+          </Button>
+          <Button onClick={() => move(account.account, Direction.Right)}>Move Right</Button>
+        </div>
+        <div>
+          <Button onClick={() => move(account.account, Direction.Down)}>Move Down</Button>
+        </div>
+      </div>
     </div>
-
   )
 }
 
