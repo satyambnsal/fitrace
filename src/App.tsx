@@ -8,11 +8,26 @@ import { useDojo } from './dojo/useDojo'
 import { DojoProvider } from './dojo/DojoContext'
 import { dojoConfig } from '../dojoConfig'
 import { setup } from './dojo/generated/setup'
-import { Block, Button, App } from 'konsta/react'
+import { Block, Button, App as KonstaApp } from 'konsta/react'
 
 import Loading from './components/Loading.tsx'
+import { IonApp, IonButton, IonRouterOutlet } from '@ionic/react'
+import { IonReactRouter } from '@ionic/react-router'
+import { Route } from 'react-router'
 
 type SetupResultType = Awaited<ReturnType<typeof setup>>
+
+const App = () => {
+  return (
+    <IonApp>
+      <IonReactRouter>
+        <IonRouterOutlet onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
+          <Route path="/" exact component={MyApp} />
+        </IonRouterOutlet>
+      </IonReactRouter>
+    </IonApp>
+  )
+}
 
 function MyApp() {
   const [setupResult, setSetupResult] = useState<SetupResultType>({} as SetupResultType)
@@ -29,15 +44,20 @@ function MyApp() {
   console.log('setup result', setupResult)
 
   if (!setupResult.burnerManager) {
-    return <Loading />
+    return (
+      <div>
+        <Loading></Loading>
+      </div>
+    )
   }
 
   return (
-    <App>
+    <KonstaApp>
       <DojoProvider value={setupResult}>
         <PositionGame />
+        <IonButton fill="clear">Start</IonButton>
       </DojoProvider>
-    </App>
+    </KonstaApp>
   )
 }
 
