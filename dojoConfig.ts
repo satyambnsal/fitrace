@@ -7,7 +7,7 @@ import { createDojoConfig } from '@dojoengine/core'
 
 // Uncomment to run with Cartridge slots
 const rpc_url = 'https://api.cartridge.gg/x/fitace/katana'
-const torii_url = 'https://api.cartridge.gg/x/fitace/torii/graphql'
+const torii_url = 'https://api.cartridge.gg/x/fitace/torii'
 
 export const dojoConfig = createDojoConfig({
   manifest,
