@@ -661,8 +661,8 @@
       }
     ],
     "address": "0x446f1f19ba951b59935df72974f8ba6060e5fbb411ca21d3e3e3812e3eb8df8",
-    "transaction_hash": "0x7f1456c94b5cc20a043c7acb7e183a31b57b6de82699b062498189f8aae9d0b",
-    "block_number": 15,
+    "transaction_hash": "0x4955a1625550dadbd2a09e1a1a524d3d327b593ee9da867f230c09693d1d4fd",
+    "block_number": 3,
     "seed": "dojo_starter",
     "name": "dojo::world::world"
   },

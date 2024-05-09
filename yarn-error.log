@@ -1,0 +1,92 @@
+Arguments: 
+  /Users/satyam/.volta/tools/image/node/20.13.0/bin/node /Users/satyam/.volta/tools/image/yarn/1.22.18/bin/yarn.js add @capacitor/assets --dev
+
+PATH: 
+  /Users/satyam/.volta/tools/image/yarn/1.22.18/bin:/Users/satyam/.volta/tools/image/node/20.13.0/bin:/Users/satyam/.bun/bin:/Users/satyam/Library/pnpm:/Users/satyam/.yarn/bin:/Users/satyam/.config/yarn/global/node_modules/.bin:/Users/satyam/.cairo/target/release:/Users/satyam/.volta/bin:/Users/satyam/miniforge3/bin:/opt/homebrew/opt/node@14/bin:/Users/satyam/.nvm/versions/node/v18.19.1/bin:/Users/satyam/.asdf/shims:/Users/satyam/.asdf/bin:/opt/homebrew/bin:/opt/homebrew/opt/python@3.11:/Users/satyam/.cairo/target/release:/Users/satyam/.local/share/solana/install/active_release/bin:/Library/Frameworks/Python.framework/Versions/3.11/bin:/Users/satyam/.local/share/solana/install/active_release/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/satyam/flutter/binwq:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin:/Library/Apple/usr/bin:/usr/local/go/bin:/Users/satyam/.starkli/bin:/Users/satyam/.cargo/bin:/Users/satyam/.dojo/bin:/Users/satyam/.local/share/apibara/bin:/Users/satyam/.slot/bin:/Users/satyam/.local/bin:/Applications/Visual Studio Code.app/Contents/Resources/app/bin:/Users/satyam/.foundry/bin:/Users/satyam/.foundry/bin:/Users/satyam/.foundry/bin:/Users/satyam/.local/bin:/Users/satyam/.protostar/dist/protostar:/Users/satyam/.nargo/bin:/Users/satyam/.aztec/bin
+
+Yarn version: 
+  1.22.18
+
+Node version: 
+  20.13.0
+
+Platform: 
+  darwin arm64
+
+Trace: 
+  Error: /Users/satyam/web3/cairo/mobile-apps/my-app/node_modules/@latticexyz/config/node_modules/esbuild: spawn /bin/sh EAGAIN
+      at ChildProcess._handle.onexit (node:internal/child_process:286:19)
+      at onErrorNT (node:internal/child_process:484:16)
+      at process.processTicksAndRejections (node:internal/process/task_queues:82:21)
+
+npm manifest: 
+  {
+    "name": "capacitor-app",
+    "version": "1.0.0",
+    "description": "An Amazing Capacitor App",
+    "main": "index.js",
+    "keywords": [
+      "capacitor",
+      "mobile"
+    ],
+    "scripts": {
+      "dev": "vite",
+      "build": "tsc && vite build",
+      "preview": "vite preview"
+    },
+    "dependencies": {
+      "@capacitor/camera": "latest",
+      "@capacitor/core": "latest",
+      "@capacitor/ios": "^6.0.0",
+      "@capacitor/splash-screen": "latest",
+      "@dojoengine/core": "0.6.125",
+      "@dojoengine/create-burner": "0.6.125",
+      "@dojoengine/react": "0.6.125",
+      "@dojoengine/recs": "0.1.35",
+      "@dojoengine/state": "0.6.125",
+      "@dojoengine/torii-client": "0.6.125",
+      "@dojoengine/utils": "0.6.125",
+      "@latticexyz/react": "^2.0.0-next.11",
+      "@latticexyz/utils": "^2.0.0-next.11",
+      "ethers": "^5.7.2",
+      "graphql": "^16.7.1",
+      "graphql-request": "^6.1.0",
+      "mobx": "^6.9.0",
+      "proxy-deep": "^3.1.1",
+      "react": "^18.2.0",
+      "react-dom": "^18.2.0",
+      "rxjs": "^7.8.1",
+      "starknet": "^6.1.5",
+      "vite-plugin-top-level-await": "^1.3.1",
+      "vite-plugin-wasm": "^3.2.2"
+    },
+    "devDependencies": {
+      "@capacitor/cli": "latest",
+      "@graphql-codegen/cli": "^5.0.0",
+      "@graphql-codegen/typescript": "^4.0.1",
+      "@graphql-codegen/typescript-graphql-request": "^5.0.0",
+      "@graphql-codegen/typescript-operations": "^4.0.1",
+      "@types/node": "^20.4.8",
+      "@types/react": "^18.2.33",
+      "@types/react-dom": "^18.0.11",
+      "@typescript-eslint/eslint-plugin": "^5.59.0",
+      "@typescript-eslint/parser": "^5.59.0",
+      "@vitejs/plugin-react": "^4.0.0",
+      "eslint": "^8.38.0",
+      "eslint-plugin-react-hooks": "^4.6.0",
+      "eslint-plugin-react-refresh": "^0.3.4",
+      "typescript": "^5.0.3",
+      "vite": "^4.3.9"
+    },
+    "author": "Satyam Bansal",
+    "license": "ISC",
+    "volta": {
+      "node": "20.13.0"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile

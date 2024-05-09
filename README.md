@@ -10,3 +10,8 @@ To run the provided example, you can use `npm start` command.
 ```bash
 npm start
 ```
+
+```
+
+slot deployments create DEPLOYMENT_NAME torii --world YOUR_WORLD_ADDRESS --rpc YOUR_NEW_RPC_URL --start-block 1
+```

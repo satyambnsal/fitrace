@@ -16,18 +16,23 @@ function App() {
   useEffect(() => {
     setup(dojoConfig)
       .then((response) => {
+        console.log('res', response)
         setSetupResult(response)
       })
       .catch((err) => {
-        console.error('failed to setup')
+        console.error('failed to setup', err)
       })
   }, [])
-
-  return (
-    <DojoProvider value={setupResult}>
-      {!!setupResult.dojoProvider ? <PositionGame /> : <h1>Game is loading</h1>}
-    </DojoProvider>
-  )
+  console.log('setup result', setupResult)
+  if (setupResult.burnerManager) {
+    return (
+      <DojoProvider value={setupResult}>
+        <PositionGame />
+      </DojoProvider>
+    )
+  } else {
+    return <h1>Game is loading</h1>
+  }
 }
 
 export const PositionGame = () => {
