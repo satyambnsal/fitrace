@@ -1,0 +1,10 @@
+{
+  "appId": "com.fitrace.app",
+  "appName": "dojo-mobile-game",
+  "webDir": "dist",
+  "plugins": {
+    "SplashScreen": {
+      "launchShowDuration": 0
+    }
+  }
+}
