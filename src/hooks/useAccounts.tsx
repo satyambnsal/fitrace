@@ -26,6 +26,7 @@ const removeAccountFromStorage = async () => {
 
 export const useAccounts = () => {
   const [isLoading, setIsLoading] = useState(false)
+  const [isAccountCreated , setIsAccountCreated] = useState(false);
   const [error, setError] = useState<{ isError: boolean; message?: string; errorObject?: unknown }>(
     {
       isError: false,
@@ -93,6 +94,7 @@ export const useAccounts = () => {
   }
 
   const createAccount = async (): Promise<Account | null> => {
+    setIsAccountCreated(false) // setting IsAccount Created to false because while running this function we are creating a new account which is not created yet that's why we are setting it to false 
     setIsLoading(true)
     let burnerManagerLocal = burnerManager
     if (!burnerManagerLocal) {
@@ -104,6 +106,8 @@ export const useAccounts = () => {
         JSON.stringify({ address: newAccount.address, signer: newAccount.signer })
       )
       console.log('new account', newAccount)
+
+      setIsAccountCreated(true)
       setAccountData({ address: newAccount.address, signer: newAccount.signer })
     } else {
       setError({ isError: true, message: 'Failed to create new account from burner' })
@@ -130,5 +134,6 @@ export const useAccounts = () => {
     account,
     createAccount,
     removeAccount,
+    isAccountCreated
   }
 }
