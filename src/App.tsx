@@ -10,7 +10,7 @@ import { dojoConfig } from '../dojoConfig'
 import { setup } from './dojo/generated/setup'
 import { Block, Button } from 'konsta/react'
 
-import { IonApp, IonButton, IonRouterOutlet } from '@ionic/react'
+import { IonApp, IonRouterOutlet } from '@ionic/react'
 import { IonReactRouter } from '@ionic/react-router'
 import { Route } from 'react-router'
 import { GameScreen, AccountScreen } from './components'

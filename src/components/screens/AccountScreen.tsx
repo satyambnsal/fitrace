@@ -7,15 +7,11 @@ import {
   IonButton,
   IonSpinner,
 } from '@ionic/react'
-import React from 'react'
 import { useAccounts } from '../../hooks/useAccounts'
-import { Loader } from '../Loader'
 import { trimStringWithEllipsis } from '../../utils'
-import { useAtom, useAtomValue } from 'jotai'
-import { accountAtom } from '../../state/atoms'
 
 export const AccountScreen = () => {
-  const { createAccount, masterAccount, isLoading, error, account } = useAccounts()
+  const { createAccount, isLoading, error, account } = useAccounts()
   console.log({ account, error })
   return (
     <IonPage>
@@ -27,7 +23,7 @@ export const AccountScreen = () => {
       <IonContent className="ion-padding">
         {!!account && (
           <div>
-            <p>Use Existing Account</p>
+            <p>Use Existing Account 1</p>
             <IonButton routerLink="/home">{trimStringWithEllipsis(account?.address)}</IonButton>
           </div>
         )}
