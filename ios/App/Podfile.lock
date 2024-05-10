@@ -18,7 +18,7 @@ DEPENDENCIES:
   - "CapacitorCamera (from `../../node_modules/@capacitor/camera`)"
   - "CapacitorCommunityImageToText (from `../../node_modules/@capacitor-community/image-to-text`)"
   - "CapacitorCordova (from `../../node_modules/@capacitor/ios`)"
-  - CapacitorHealthkitDojo (from `../../../capacitor-healthkit`)
+  - CapacitorHealthkitDojo (from `../../node_modules/capacitor-healthkit-dojo`)
   - "CapacitorPreferences (from `../../node_modules/@capacitor/preferences`)"
   - "CapacitorSplashScreen (from `../../node_modules/@capacitor/splash-screen`)"
 
@@ -32,7 +32,7 @@ EXTERNAL SOURCES:
   CapacitorCordova:
     :path: "../../node_modules/@capacitor/ios"
   CapacitorHealthkitDojo:
-    :path: "../../../capacitor-healthkit"
+    :path: "../../node_modules/capacitor-healthkit-dojo"
   CapacitorPreferences:
     :path: "../../node_modules/@capacitor/preferences"
   CapacitorSplashScreen:
@@ -47,6 +47,6 @@ SPEC CHECKSUMS:
   CapacitorPreferences: c9b839a80baa72e4ed4bdb117618e1950d3046b5
   CapacitorSplashScreen: 5431ab8d19c1c6e95777d53bfaa7a36a6c3d94c7
 
-PODFILE CHECKSUM: 7d4cf9626593685ace352c11e968611e940bbd95
+PODFILE CHECKSUM: 396a407952d8cbce8cfac26ac5089934eebc701b
 
 COCOAPODS: 1.11.3
