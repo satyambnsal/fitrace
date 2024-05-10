@@ -1,4 +1,17 @@
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonButton } from '@ionic/react'
+import {
+  IonContent,
+  IonHeader,
+  IonPage,
+  IonTitle,
+  IonToolbar,
+  IonButton,
+  IonCard,
+  IonCardHeader,
+  IonCardTitle,
+  IonCardSubtitle,
+  IonCardContent,
+  IonText,
+} from '@ionic/react'
 import {
   ActivityData,
   CapacitorHealthkit,
@@ -93,6 +106,18 @@ export const GameScreen = () => {
             <div>Total steps: {totalSteps}</div>
           </div>
         </div>
+        <IonCard color="primary">
+          <IonCardHeader>
+            <IonCardTitle>Total Steps Count</IonCardTitle>
+          </IonCardHeader>
+
+          <IonCardContent>
+            <IonText>
+              <h1>{totalSteps}</h1>
+            </IonText>
+            <IonButton disabled={true}>Claim {totalSteps} FRT token</IonButton>
+          </IonCardContent>
+        </IonCard>
       </IonContent>
     </IonPage>
   )
