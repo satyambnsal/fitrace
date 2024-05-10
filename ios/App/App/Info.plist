@@ -53,8 +53,8 @@
     <key>NSPhotoLibraryUsageDescription</key>
     <string>This app needs access to photo library to scan photos for wallet keys</string>
     <key>NSHealthShareUsageDescription</key>
-        <string>Read Health Data</string>
+        <string>App need access to health data to show step counts and mint reward points</string>
         <key>NSHealthUpdateUsageDescription</key>
-        <string>Read Health Data</string>
+        <string>App need access to health data to show step counts and mint reward points</string>
 </dict>
 </plist>
