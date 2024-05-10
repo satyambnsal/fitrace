@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import MyApp from './App.tsx'
+import { App } from './App.tsx'
 import './styles/index.css'
 import './styles/variable.css'
 import '@ionic/react/css/core.css'
@@ -18,7 +18,7 @@ async function init() {
 
   root.render(
     <React.StrictMode>
-      <MyApp />
+      <App />
     </React.StrictMode>
   )
 }

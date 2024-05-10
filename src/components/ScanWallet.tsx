@@ -1,5 +1,5 @@
 import { Camera, CameraResultType, CameraSource, Photo } from '@capacitor/camera'
-import { Ocr, TextDetections, TextDetection } from '@capacitor-community/image-to-text'
+import { Ocr, TextDetection } from '@capacitor-community/image-to-text'
 import { useState } from 'react'
 
 export const ScanWallet = () => {
