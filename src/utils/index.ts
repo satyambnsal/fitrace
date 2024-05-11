@@ -52,3 +52,11 @@ export const trimStringWithEllipsis = (str: string) => {
 
   return `${firstThree}...${lastFive}`
 }
+
+export const getStartAndEndOfDay = () => {
+  const now = new Date()
+  const startDate = new Date(now.getFullYear(), now.getMonth(), now.getDate())
+  const endDate = new Date(now.getFullYear(), now.getMonth(), now.getDate() + 1)
+
+  return { startDate, endDate }
+}

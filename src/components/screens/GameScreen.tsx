@@ -21,16 +21,9 @@ import {
   SleepData,
 } from 'capacitor-healthkit-dojo'
 import { useState } from 'react'
+import { getStartAndEndOfDay } from '../../utils'
 
-const READ_PERMISSIONS = [
-  'calories',
-  'stairs',
-  'activity',
-  'steps',
-  'distance',
-  'duration',
-  'weight',
-]
+const READ_PERMISSIONS = ['steps', 'distance']
 
 /**
    * 
@@ -41,11 +34,6 @@ const READ_PERMISSIONS = [
     workoutActivityId: number;
     workoutActivityName: string;
    */
-
-const currentDate = new Date()
-const startDate = new Date(currentDate.getTime() - 4 * 60 * 60 * 1000)
-
-const endDate = new Date(currentDate.getTime() + 4 * 60 * 60 * 1000)
 
 export const GameScreen = () => {
   const [totalSteps, setTotalSteps] = useState(0)
@@ -60,11 +48,9 @@ export const GameScreen = () => {
       console.error('[HealthKitService] Error getting Authorization:', error)
     }
   }
-  const getActivityData = async (
-    startDate: Date,
-    endDate: Date
-  ): Promise<QueryOutput<ActivityData> | undefined> => {
+  const getActivityData = async (): Promise<QueryOutput<ActivityData> | undefined> => {
     try {
+      const { startDate, endDate } = getStartAndEndOfDay()
       const queryOptions = {
         sampleName: SampleNames.STEP_COUNT,
         startDate: startDate.toISOString(),
@@ -95,7 +81,7 @@ export const GameScreen = () => {
         <IonButton onClick={requestAuthorization}>Request Authorization</IonButton>
         <IonButton
           onClick={() => {
-            getActivityData(startDate, endDate)
+            getActivityData()
           }}
         >
           Get Data
