@@ -12,7 +12,7 @@ import { trimStringWithEllipsis } from '../../utils'
 
 export const AccountScreen = () => {
   const { createAccount, isLoading, error, account } = useAccounts()
-  console.log({ account, error })
+  // console.log({ account, error })
   return (
     <IonPage>
       <IonHeader>

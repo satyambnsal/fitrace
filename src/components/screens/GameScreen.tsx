@@ -73,7 +73,7 @@ export const GameScreen = () => {
       }
 
       const response = await CapacitorHealthkit.queryHKitSampleType<ActivityData>(queryOptions)
-      console.log(response)
+      // console.log(response)
       const totalStepsData = response.resultData
         .filter((results) => (results as any).unitName === 'count')
         .reduce((prevSteps, obj) => prevSteps + (obj as any).value, 0)

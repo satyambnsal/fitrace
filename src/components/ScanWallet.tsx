@@ -18,7 +18,7 @@ export const ScanWallet = () => {
         resultType: CameraResultType.Uri,
         source: CameraSource.Camera,
       })
-      console.log('photo', photo)
+      // console.log('photo', photo)
       setPhoto(photo)
       const data = await Ocr.detectText({ filename: photo.path || '' })
       setTextDetected(data.textDetections)
