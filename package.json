@@ -19,7 +19,8 @@
     "ios": "npx cap run ios",
     "open": "npx cap open ios",
     "sync": "npx cap sync",
-    "build-sync": "bun run build && bun run sync",
+    "copy": "npx cap copy",
+    "build-sync": "bun run build && bun run copy && bun run sync",
     "generate": "npx capacitor-assets generate --ios"
   },
   "dependencies": {
