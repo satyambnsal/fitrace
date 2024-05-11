@@ -22,6 +22,16 @@
 	<string>$(CURRENT_PROJECT_VERSION)</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSCameraUsageDescription</key>
+	<string>This app needs access to your camera to scan wallet keys</string>
+	<key>NSHealthShareUsageDescription</key>
+	<string>App need access to health data to show step counts and mint reward points</string>
+	<key>NSHealthUpdateUsageDescription</key>
+	<string>App need access to health data to show step counts and mint reward points</string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>This app needs access to photo library to scan photos for wallet keys</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>This app needs access to photo library to scan photos for wallet keys</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
@@ -46,15 +56,5 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<true/>
-    <key>NSCameraUsageDescription</key>
-    <string>This app needs access to your camera to scan wallet keys</string>
-    <key>NSPhotoLibraryAddUsageDescription</key>
-    <string>This app needs access to photo library to scan photos for wallet keys</string>
-    <key>NSPhotoLibraryUsageDescription</key>
-    <string>This app needs access to photo library to scan photos for wallet keys</string>
-    <key>NSHealthShareUsageDescription</key>
-        <string>App need access to health data to show step counts and mint reward points</string>
-        <key>NSHealthUpdateUsageDescription</key>
-        <string>App need access to health data to show step counts and mint reward points</string>
 </dict>
 </plist>
