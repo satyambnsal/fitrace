@@ -1,7 +1,10 @@
-## Created with Capacitor Create App
+## Fitrace: Gamified, social mobile app designed to lead an active and healthy lifestyle. Fitrace is built on Starknet.
 
-This app was created using [`@capacitor/create-app`](https://github.com/ionic-team/create-capacitor-app),
-and comes with a very minimal shell for building an app.
+[Fitrace smart contracts](https://github.com/satyambnsal/fitrace-contracts)
+[Fitrace Product roadmap](https://docs.google.com/document/d/1T3x5DbrYpajoRG8OCwedjmGyo_4U4fRl3cbVcuTZEEc/edit?usp=sharing)
+
+
+
 
 ### Running this example
 
