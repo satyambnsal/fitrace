@@ -1,12 +1,13 @@
 import { useEffect, useMemo, useState } from 'react'
-import { ERROR_MESSAGES } from '../utils'
+import { ERROR_MESSAGES, formatAddress } from '../utils'
 import { BurnerManager } from '@dojoengine/create-burner'
-import { Account, SignerInterface } from 'starknet'
+import { Account, BigNumberish, SignerInterface } from 'starknet'
 import { dojoConfig as config } from '../../dojoConfig'
 import { useProvider } from './useProvider'
 import { Preferences } from '@capacitor/preferences'
 import { useAtomValue, useSetAtom } from 'jotai'
 import { accountAtom, accountDataAtom } from '../state/atoms'
+import { useToast } from '@/components/ui/use-toast'
 
 const setAccountToStorage = async (account: string) => {
   await Preferences.set({
@@ -26,6 +27,7 @@ const removeAccountFromStorage = async () => {
 
 export const useAccounts = () => {
   const [isLoading, setIsLoading] = useState(false)
+  const { toast } = useToast()
   const [error, setError] = useState<{ isError: boolean; message?: string; errorObject?: unknown }>(
     {
       isError: false,
@@ -109,6 +111,16 @@ export const useAccounts = () => {
       setError({ isError: true, message: 'Failed to create new account from burner' })
     }
     setIsLoading(false)
+    toast({
+      title: 'Wallet Created successfully',
+      description: (
+        <div className="">
+          New burner wallet created with address
+          {formatAddress(newAccount?.address as BigNumberish)}
+        </div>
+      ),
+    })
+
     return newAccount || null
   }
 

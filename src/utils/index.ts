@@ -1,3 +1,5 @@
+import { BigNumberish, num } from 'starknet'
+
 export enum Direction {
   Left = 1,
   Right = 2,
@@ -59,4 +61,14 @@ export const getStartAndEndOfDay = () => {
   const endDate = new Date(now.getFullYear(), now.getMonth(), now.getDate() + 1)
 
   return { startDate, endDate }
+}
+
+export function formatAddress(addr: BigNumberish) {
+  if (typeof addr === 'number') {
+    addr = '0x' + addr.toString(16)
+  } else {
+    addr = num.toHex(BigInt(addr))
+  }
+
+  return addr.substr(0, 6) + '...' + addr.substr(-4)
 }

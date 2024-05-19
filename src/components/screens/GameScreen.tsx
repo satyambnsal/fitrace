@@ -11,6 +11,7 @@ import {
   IonCardSubtitle,
   IonCardContent,
   IonText,
+  IonIcon,
 } from '@ionic/react'
 import {
   ActivityData,
@@ -22,6 +23,18 @@ import {
 } from 'capacitor-healthkit-dojo'
 import { useState } from 'react'
 import { getStartAndEndOfDay } from '../../utils'
+import { BottomTabs } from '../../components'
+import { Button } from '../ui/button'
+import { useHistory } from 'react-router'
+import { arrowBackOutline } from 'ionicons/icons'
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card"
 
 const READ_PERMISSIONS = ['steps', 'distance']
 
@@ -36,6 +49,7 @@ const READ_PERMISSIONS = ['steps', 'distance']
    */
 
 export const GameScreen = () => {
+  const history = useHistory()
   const [totalSteps, setTotalSteps] = useState(0)
   const requestAuthorization = async (): Promise<void> => {
     try {
@@ -72,39 +86,66 @@ export const GameScreen = () => {
 
   return (
     <IonPage>
-      <IonHeader>
-        <IonToolbar>
-          <IonTitle>Home</IonTitle>
+     <IonHeader>
+        <IonToolbar className="text-center">
+          <div className="flex justify-between items-center px-3 py-1">
+            <Button
+              className="flex items-center gap-2 !pe-2 ps-0"
+              variant="secondary"
+              onClick={() => {
+                history.goBack()
+              }}
+            >
+              <IonIcon
+                icon={arrowBackOutline}
+                size="small"
+                className="k-color-brand-green"
+                color="#A91D3A"
+              />
+              Go Back
+            </Button>
+            {/* <NewGameBtn /> */}
+          </div>
         </IonToolbar>
       </IonHeader>
       <IonContent className="ion-padding">
-        <IonButton onClick={requestAuthorization}>Request Authorization</IonButton>
-        <IonButton
+        <div className='flex gap-3 items-center justify-center p-3'>
+
+        <Button onClick={requestAuthorization}>Request Authorization</Button>
+        <Button
           onClick={() => {
             getActivityData()
           }}
         >
           Get Data
-        </IonButton>
+        </Button>
+
+        </div>
 
         <div>
-          <div>
+          <div className='py-4'>
             <div>Total steps: {totalSteps}</div>
           </div>
         </div>
-        <IonCard color="primary">
-          <IonCardHeader>
-            <IonCardTitle>Total Steps Count</IonCardTitle>
-          </IonCardHeader>
+        <Card className="w-[350px] mx-auto">
+          <CardHeader>
+            <CardTitle>Total Steps Count</CardTitle>
+            <CardDescription>Deploy your new project in one-click.</CardDescription>
+          </CardHeader>
 
-          <IonCardContent>
-            <IonText>
-              <h1>{totalSteps}</h1>
-            </IonText>
-            <IonButton disabled={true}>Claim {totalSteps} FRT token</IonButton>
-          </IonCardContent>
-        </IonCard>
+         <CardContent>
+          <p>
+            <h1 className='text-4xl'>{totalSteps}</h1>
+          </p>
+          </CardContent>
+
+        <CardFooter className="flex justify-center">
+        <Button disabled={true}>Claim {totalSteps} FRT token</Button>
+        </CardFooter>
+      </Card>
       </IonContent>
+
+      <BottomTabs />
     </IonPage>
   )
 }

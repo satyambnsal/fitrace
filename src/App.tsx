@@ -8,12 +8,11 @@ import { useDojo } from './dojo/useDojo'
 import { DojoProvider } from './dojo/DojoContext'
 import { dojoConfig } from '../dojoConfig'
 import { setup } from './dojo/generated/setup'
-import { Block, Button } from 'konsta/react'
 
 import { IonApp, IonRouterOutlet } from '@ionic/react'
 import { IonReactRouter } from '@ionic/react-router'
 import { Route } from 'react-router'
-import { GameScreen, AccountScreen } from './components'
+import { GameScreen, AccountScreen, GameRules, Settings } from './components'
 
 type SetupResultType = Awaited<ReturnType<typeof setup>>
 
@@ -24,6 +23,8 @@ export const App = () => {
         <IonRouterOutlet>
           <Route path="/home" component={GameScreen} />
           <Route exact path="/" component={AccountScreen} />
+          <Route path="/rules" component={GameRules} />
+          <Route path="/settings" component={Settings} />
         </IonRouterOutlet>
       </IonReactRouter>
     </IonApp>
