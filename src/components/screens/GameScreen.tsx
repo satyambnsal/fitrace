@@ -27,7 +27,7 @@ const READ_PERMISSIONS = ['steps', 'distance']
 
 /**
    * 
-   *     totalFlightsClimbed: number;
+   *totalFlightsClimbed: number;
     totalSwimmingStrokeCount: number;
     totalEnergyBurned: number;
     totalDistance: number;
