@@ -35,6 +35,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card"
+import backgroundImg from '../../assets/background.png'
 
 const READ_PERMISSIONS = ['steps', 'distance']
 
@@ -85,67 +86,48 @@ export const GameScreen = () => {
   }
 
   return (
-    <IonPage>
-     <IonHeader>
-        <IonToolbar className="text-center">
-          <div className="flex justify-between items-center px-3 py-1">
-            <Button
-              className="flex items-center gap-2 !pe-2 ps-0"
-              variant="secondary"
-              onClick={() => {
-                history.goBack()
-              }}
-            >
-              <IonIcon
-                icon={arrowBackOutline}
-                size="small"
-                className="k-color-brand-green"
-                color="#A91D3A"
-              />
-              Go Back
-            </Button>
-            {/* <NewGameBtn /> */}
+      <IonPage>
+        <IonContent>
+          <div style={{backgroundImage: `url(${backgroundImg})`}} className='min-h-full text-white'>
+            <div className='flex gap-3 items-center justify-center p-3'>
+              <Button onClick={requestAuthorization}
+                variant="gradient"
+                >Request Authorization</Button>
+              <Button
+                variant="gradient"
+                onClick={() => {
+                  getActivityData()
+                }}
+              >
+                Get Data
+              </Button>
+            </div>
+
+            <div>
+              <div className='py-4'>
+                <div>Total steps: {totalSteps}</div>
+              </div>
+            </div>
+
+            <Card className="w-[350px] mx-auto">
+              <CardHeader>
+                <CardTitle>Total Steps Count</CardTitle>
+                <CardDescription>Deploy your new project in one-click.</CardDescription>
+              </CardHeader>
+
+            <CardContent>
+              <p>
+                <h1 className='text-4xl'>{totalSteps}</h1>
+              </p>
+              </CardContent>
+
+            <CardFooter className="flex justify-center">
+            <Button disabled={true} variant="gradient">Claim {totalSteps} FRT token</Button>
+            </CardFooter>
+            </Card>
           </div>
-        </IonToolbar>
-      </IonHeader>
-      <IonContent className="ion-padding">
-        <div className='flex gap-3 items-center justify-center p-3'>
 
-        <Button onClick={requestAuthorization}>Request Authorization</Button>
-        <Button
-          onClick={() => {
-            getActivityData()
-          }}
-        >
-          Get Data
-        </Button>
-
-        </div>
-
-        <div>
-          <div className='py-4'>
-            <div>Total steps: {totalSteps}</div>
-          </div>
-        </div>
-        <Card className="w-[350px] mx-auto">
-          <CardHeader>
-            <CardTitle>Total Steps Count</CardTitle>
-            <CardDescription>Deploy your new project in one-click.</CardDescription>
-          </CardHeader>
-
-         <CardContent>
-          <p>
-            <h1 className='text-4xl'>{totalSteps}</h1>
-          </p>
-          </CardContent>
-
-        <CardFooter className="flex justify-center">
-        <Button disabled={true}>Claim {totalSteps} FRT token</Button>
-        </CardFooter>
-      </Card>
-      </IonContent>
-
-      <BottomTabs />
-    </IonPage>
+        </IonContent>
+     </IonPage>
   )
 }

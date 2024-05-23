@@ -12,22 +12,24 @@ import { setup } from './dojo/generated/setup'
 import { IonApp, IonRouterOutlet } from '@ionic/react'
 import { IonReactRouter } from '@ionic/react-router'
 import { Route } from 'react-router'
-import { GameScreen, AccountScreen, GameRules, Settings } from './components'
+import { GameScreen, AccountScreen, GameRules, Settings, Layout } from './components'
 
 type SetupResultType = Awaited<ReturnType<typeof setup>>
 
 export const App = () => {
   return (
-    <IonApp>
-      <IonReactRouter>
-        <IonRouterOutlet>
-          <Route path="/home" component={GameScreen} />
-          <Route exact path="/" component={AccountScreen} />
-          <Route path="/rules" component={GameRules} />
-          <Route path="/settings" component={Settings} />
-        </IonRouterOutlet>
-      </IonReactRouter>
-    </IonApp>
+        <IonApp>
+          <IonReactRouter>
+          <Layout>
+            <IonRouterOutlet>
+                <Route path="/home" component={GameScreen} />
+                <Route exact path="/" component={AccountScreen} />
+                <Route path="/rules" component={GameRules} />
+                <Route path="/settings" component={Settings} />
+            </IonRouterOutlet>
+          </Layout>
+          </IonReactRouter>
+        </IonApp>
   )
 }
 
