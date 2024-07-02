@@ -64,6 +64,7 @@ export const GameScreen = () => {
   }
   const getActivityData = async (): Promise<QueryOutput<ActivityData> | undefined> => {
     try {
+      //TODO: Ankit: Play with start date and end date to get same data as apple phone healthkit
       const { startDate, endDate } = getStartAndEndOfDay()
       const queryOptions = {
         sampleName: SampleNames.STEP_COUNT,
@@ -83,7 +84,7 @@ export const GameScreen = () => {
       return undefined
     }
   }
-
+  //TODO: Show this modal by default when user comes to home screen.  
   return (
     <IonPage>
      <IonHeader>
