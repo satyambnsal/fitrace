@@ -1,11 +1,6 @@
 import {
   IonContent,
-  IonHeader,
   IonPage,
-  IonTitle,
-  IonToolbar,
-  IonButton,
-  IonSpinner,
 } from '@ionic/react'
 import { useAccounts } from '../../hooks/useAccounts'
 import { trimStringWithEllipsis } from '../../utils'
@@ -13,6 +8,7 @@ import { Button } from "@/components/ui/button"
 import logo from '../../assets/icon.png'
 import { useHistory } from 'react-router-dom'
 import { Spinner } from '../Spinner'
+import backgroundImg from '../../assets/background.png'
 
 export const AccountScreen = () => {
   const { createAccount, isLoading, error, account } = useAccounts()
@@ -20,22 +16,13 @@ export const AccountScreen = () => {
   // console.log({ account, error })
   return (
     <IonPage>
-    <IonHeader>
-        <IonToolbar className="text-center">
-          <img
-            src={logo}
-            alt="Ascend It logo"
-            className="h-8 rounded-full absolute left-3 top-1/2 -translate-y-1/2"
-          />
-        </IonToolbar>
-      </IonHeader>
       <IonContent>
-        <div className="bg-slate-50 h-full relative flex flex-col pb-12">
-          <h1 className="text-center">Ascend It</h1>
+        <div className="min-h-full relative flex flex-col pb-12 text-white bg-cover bg-center" style={{backgroundImage: `url(${backgroundImg})`}}>
+          <h1 className="text-center">FitRace</h1>
           <div className="flex justify-center">
             <img
               src={logo}
-              alt="Ascend It logo"
+              alt="fitrace logo"
               className="w-64 h-64 my-8 block object-cover rounded-md"
             />
           </div>
@@ -47,6 +34,7 @@ export const AccountScreen = () => {
                   onClick={() => {
                     history.push('/home')
                   }}
+                  variant="gradient"
                   className="min-h-12 max-w-64 w-full"
                 >
                   {trimStringWithEllipsis(account?.address)}
@@ -62,6 +50,7 @@ export const AccountScreen = () => {
             )}
             <Button
               onClick={createAccount}
+              variant="gradient"
               className="min-h-12 flex items-center justify-center max-w-64 w-full"
               size="lg"
             >

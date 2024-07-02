@@ -4,6 +4,7 @@ import { useHistory } from 'react-router-dom'
 import { Button } from '../ui/button'
 import { BottomTabs } from '../BottomTabs'
 import arrow from '../../assets/arrow.svg'
+import backgroundImg from '../../assets/background.png'
 
 //TODO: Change game rules.
 
@@ -11,30 +12,11 @@ export const GameRules = () => {
   const history = useHistory()
   return (
     <IonPage>
-      <IonHeader>
-        <IonToolbar className="text-center">
-          <div className="flex items-center justify-between px-4">
-            <Button
-              className="flex items-center gap-2 !pe-2 ps-0"
-              variant="outline"
-              onClick={() => {
-                history.goBack()
-              }}
-            >
-              <IonIcon
-                icon={arrowBackOutline}
-                size="small"
-                className="k-color-brand-green"
-                color="#A91D3A"
-              />
-              Go Back
-            </Button>
-            <div>Game Rules</div>
-          </div>
-        </IonToolbar>
-      </IonHeader>
       <IonContent>
-        <div className="px-4 pt-4 pb-24">
+        <div
+          className="px-4 pt-4 pb-24 text-white"
+          style={{ backgroundImage: `url(${backgroundImg})` }}
+        >
           <h2 className="mt-0">Game Rules</h2>
           <ul className="flex flex-col gap-4 list-v1">
             <li className="border border-muted-500 rounded-md p-4 left-arrow flex items-start gap-2">
@@ -86,8 +68,6 @@ export const GameRules = () => {
           </div>
         </div>
       </IonContent>
-
-      <BottomTabs />
     </IonPage>
   )
 }

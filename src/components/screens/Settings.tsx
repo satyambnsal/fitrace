@@ -6,36 +6,16 @@ import { BottomTabs } from '../BottomTabs'
 import { useAccounts } from '../../hooks/useAccounts'
 import { trimStringWithEllipsis } from '../../utils'
 import { Spinner } from '@/components/Spinner'
+import backgroundImg from '../../assets/background.png'
 
 export const Settings = () => {
   const { account, removeAccount, createAccount, isLoading } = useAccounts()
   const history = useHistory()
   return (
-    <IonPage>
-      <IonHeader>
-        <IonToolbar className="text-center">
-          <div className="flex items-center justify-between px-4">
-            <Button
-              className="flex items-center gap-2 !pe-2 ps-0"
-              variant="secondary"
-              onClick={() => {
-                history.goBack()
-              }}
-            >
-              <IonIcon
-                icon={arrowBackOutline}
-                size="small"
-                className="k-color-brand-green"
-                color="#A91D3A"
-              />
-              Go Back
-            </Button>
-            <div>Settings</div>
-          </div>
-        </IonToolbar>
-      </IonHeader>
+    <>
+     <IonPage>
       <IonContent>
-        <div className="px-4 pt-4 pb-24 h-full flex flex-col items-center gap-8">
+        <div className="px-4 pt-4 pb-24 h-full flex flex-col items-center gap-8 text-white" style={{backgroundImage: `url(${backgroundImg})`}}>
           {!!account?.address ? (
             <div className="w-full">
               <h2 className="text-xl">
@@ -73,7 +53,7 @@ export const Settings = () => {
             </Button>
           )}
 
-          <Button size="lg" className="w-full mb-8 min-h-12 p-0 max-w-80">
+          <Button size="lg" className="w-full mb-8 min-h-12 p-0 max-w-80" variant="gradient">
             <a href="https://t.me/satyambnsal" className='w-full h-full text-inherit flex items-center justify-center' target='_blank'>
 
             <IonIcon
@@ -92,8 +72,7 @@ export const Settings = () => {
           )}
         </div>
       </IonContent>
-
-      <BottomTabs />
     </IonPage>
+    </>
   )
 }

@@ -7,8 +7,8 @@ export const BottomTabs = () => {
   const history = useHistory()
 
   return (
-    <div className='fixed bottom-0 w-full bg-white min-h-[50px] flex items-center justify-around p-3 text-xs'>
-      <Button className={`flex flex-col min-h-[55px] gap-1 text-xs text-muted-foreground hover:no-underline ${history.location.pathname === "/rules" ? "text-black" : "text-muted-foreground"}`} 
+    <div className='fixed bottom-0 w-full min-h-[50px] flex items-center justify-around p-3 text-xs backdrop-blur-xl bg-transparent border-t border-t-[#FFFFFF1a] z-[999]'>
+      <Button className={`flex flex-col min-h-[55px] gap-1 text-xs text-muted-foreground hover:no-underline ${history.location.pathname === "/rules" ? "text-white" : "text-muted-foreground"}`} 
       variant="link"
       onClick={() => {
           history.push(`/rules`)
@@ -20,7 +20,7 @@ export const BottomTabs = () => {
         Rules
       </Button>
 
-      <Button className={`flex flex-col min-h-[55px] gap-1 text-xs text-muted-foreground hover:no-underline ${history.location.pathname === "/home" ? "text-black" : "text-muted-foreground"}`} 
+      <Button className={`flex flex-col min-h-[55px] gap-1 text-xs text-muted-foreground hover:no-underline ${history.location.pathname === "/home" ? "text-white" : "text-muted-foreground"}`} 
           variant="link"
           onClick={() => {
             history.push(`/home`)
@@ -32,7 +32,7 @@ export const BottomTabs = () => {
           />Home
       </Button>
         
-       <Button className={`flex flex-col min-h-[55px] gap-1 text-xs text-muted-foreground hover:no-underline ${history.location.pathname === "/settings" ? "text-black" : "text-muted-foreground"}`} 
+       <Button className={`flex flex-col min-h-[55px] gap-1 text-xs text-muted-foreground hover:no-underline ${history.location.pathname === "/settings" ? "text-white" : "text-muted-foreground"}`} 
         variant="link"
         onClick={() => {
           history.push(`/settings`)

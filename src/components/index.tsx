@@ -5,3 +5,4 @@ export { ScanWallet } from './ScanWallet'
 export {BottomTabs} from "./BottomTabs"
 export {GameRules} from "./screens/GameRules"
 export {Settings} from "./screens/Settings"
+export {Layout} from "./Layout"
