@@ -1,26 +1,18 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import { App } from './App.tsx'
-import './styles/variable.css'
-import './styles/index.css'
-import '@ionic/react/css/core.css'
-import '@ionic/react/css/normalize.css'
-import '@ionic/react/css/structure.css'
-import '@ionic/react/css/typography.css'
-
-import { setupIonicReact } from '@ionic/react'
+import React from "react";
+import ReactDOM from "react-dom/client";
+import { App } from "./App.tsx";
+import "./styles/index.css";
 
 async function init() {
-  setupIonicReact()
-  const rootElement = document.getElementById('root')
-  if (!rootElement) throw new Error('React root not found')
-  const root = ReactDOM.createRoot(rootElement as HTMLElement)
+  const rootElement = document.getElementById("root");
+  if (!rootElement) throw new Error("React root not found");
+  const root = ReactDOM.createRoot(rootElement as HTMLElement);
 
   root.render(
     <React.StrictMode>
       <App />
     </React.StrictMode>
-  )
+  );
 }
 
-init()
+init();

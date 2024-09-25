@@ -1,38 +1,39 @@
-import { useComponentValue } from '@dojoengine/react'
-import { Entity } from '@dojoengine/recs'
-import { useEffect, useState } from 'react'
-import './App.css'
-import { Direction } from './utils'
-import { getEntityIdFromKeys } from '@dojoengine/utils'
-import { useDojo } from './dojo/useDojo'
-import { DojoProvider } from './dojo/DojoContext'
-import { dojoConfig } from '../dojoConfig'
-import { setup } from './dojo/generated/setup'
+import { useComponentValue } from "@dojoengine/react";
+import { Entity } from "@dojoengine/recs";
+import { useEffect, useState } from "react";
+import "./App.css";
+import { Direction } from "./utils";
+import { getEntityIdFromKeys } from "@dojoengine/utils";
+import { useDojo } from "./dojo/useDojo";
+import { DojoProvider } from "./dojo/DojoContext";
+import { dojoConfig } from "../dojoConfig";
+import { setup } from "./dojo/generated/setup";
 
-import { IonApp, IonRouterOutlet } from '@ionic/react'
-import { IonReactRouter } from '@ionic/react-router'
-import { Route } from 'react-router'
-import { GameScreen, AccountScreen, GameRules, Settings, Layout } from './components'
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import {
+  GameScreen,
+  AccountScreen,
+  GameRules,
+  Settings,
+  Layout,
+} from "./components";
 
-type SetupResultType = Awaited<ReturnType<typeof setup>>
+type SetupResultType = Awaited<ReturnType<typeof setup>>;
 
 export const App = () => {
   return (
-        <IonApp>
-          <IonReactRouter>
-          <Layout>
-            <IonRouterOutlet>
-                <Route path="/home" component={GameScreen} />
-                <Route exact path="/" component={AccountScreen} />
-                <Route path="/rules" component={GameRules} />
-                <Route path="/settings" component={Settings} />
-            </IonRouterOutlet>
-          </Layout>
-          </IonReactRouter>
-        </IonApp>
-  )
-}
-
+    <Router>
+      <Layout>
+        <Routes>
+          <Route path="/home" element={<GameScreen />} />
+          <Route path="/" element={<AccountScreen />} />
+          <Route path="/rules" element={<GameRules />} />
+          <Route path="/settings" element={<Settings />} />
+        </Routes>
+      </Layout>
+    </Router>
+  );
+};
 // function MyApp() {
 //   const [setupResult, setSetupResult] = useState<SetupResultType>({} as SetupResultType)
 //   useEffect(() => {
