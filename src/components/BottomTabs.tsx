@@ -1,49 +1,55 @@
-import { IonIcon } from '@ionic/react'
-import { Button } from './ui/button.tsx'
-import { settings , gameController, book } from 'ionicons/icons'
-import { useHistory } from 'react-router-dom'
+import { Book, Gamepad2Icon, Settings } from "lucide-react";
+import { Button } from "./ui/button.tsx";
+import { useNavigate, useLocation } from "react-router-dom";
 
 export const BottomTabs = () => {
-  const history = useHistory()
+  const navigate = useNavigate();
+  const location = useLocation();
 
   return (
-    <div className='fixed bottom-0 w-full min-h-[50px] flex items-center justify-around p-3 text-xs backdrop-blur-xl bg-transparent border-t border-t-[#FFFFFF1a] z-[999]'>
-      <Button className={`flex flex-col min-h-[55px] gap-1 text-xs text-muted-foreground hover:no-underline ${history.location.pathname === "/rules" ? "text-white" : "text-muted-foreground"}`} 
-      variant="link"
-      onClick={() => {
-          history.push(`/rules`)
-        }}>
-      <IonIcon
-          icon={book}
-          size="small"
-          />
+    <div className="fixed bottom-0 w-full min-h-[50px] flex items-center justify-around p-3 text-xs backdrop-blur-xl bg-transparent border-t border-t-[#FFFFFF1a] z-[999]">
+      <Button
+        className={`flex flex-col min-h-[55px] gap-1 text-xs text-muted-foreground hover:no-underline ${
+          location.pathname === "/rules"
+            ? "text-white"
+            : "text-muted-foreground"
+        }`}
+        variant="link"
+        onClick={() => {
+          navigate(`/rules`);
+        }}
+      >
+        <Book />
         Rules
       </Button>
 
-      <Button className={`flex flex-col min-h-[55px] gap-1 text-xs text-muted-foreground hover:no-underline ${history.location.pathname === "/home" ? "text-white" : "text-muted-foreground"}`} 
-          variant="link"
-          onClick={() => {
-            history.push(`/home`)
-          }}
-          >
-        <IonIcon
-          icon={gameController}
-          size="small"
-          />Home
-      </Button>
-        
-       <Button className={`flex flex-col min-h-[55px] gap-1 text-xs text-muted-foreground hover:no-underline ${history.location.pathname === "/settings" ? "text-white" : "text-muted-foreground"}`} 
+      <Button
+        className={`flex flex-col min-h-[55px] gap-1 text-xs text-muted-foreground hover:no-underline ${
+          location.pathname === "/home" ? "text-white" : "text-muted-foreground"
+        }`}
         variant="link"
         onClick={() => {
-          history.push(`/settings`)
+          navigate(`/home`);
         }}
       >
-        <IonIcon
-          icon={settings}
-          size="small"
-        />Setting
+        <Gamepad2Icon />
+        Home
+      </Button>
 
-        </Button>
-  </div>
-  )
-}
+      <Button
+        className={`flex flex-col min-h-[55px] gap-1 text-xs text-muted-foreground hover:no-underline ${
+          location.pathname === "/settings"
+            ? "text-white"
+            : "text-muted-foreground"
+        }`}
+        variant="link"
+        onClick={() => {
+          navigate(`/settings`);
+        }}
+      >
+        <Settings />
+        Setting
+      </Button>
+    </div>
+  );
+};

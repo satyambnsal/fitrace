@@ -1,15 +1,6 @@
 import React, { ReactNode } from "react";
 import backgroundImg from "../assets/background.png";
-import {
-  IonContent,
-  IonHeader,
-  IonIcon,
-  IonPage,
-  IonToolbar,
-} from "@ionic/react";
 import { Button } from "./ui/button";
-import { arrowBackOutline } from "ionicons/icons";
-import { useHistory } from "react-router";
 import { BottomTabs } from "./BottomTabs";
 
 interface LayoutProps {
@@ -17,10 +8,12 @@ interface LayoutProps {
 }
 
 export const Layout: React.FC<LayoutProps> = ({ children }) => {
-  const history = useHistory();
   return (
-    <div className="min-h-full text-white">
-      <div className="bg-transparent fixed w-full">
+    <div
+      style={{ backgroundImage: `url(${backgroundImg})` }}
+      className="min-h-full text-white"
+    >
+      <div className="bg-transparent backdrop-blur-xl border-b border-b-[#FFFFFF1a] fixed w-full">
         <div className="flex items-center justify-between px-4 py-4">
           {/* <Button
               className="flex items-center gap-2"

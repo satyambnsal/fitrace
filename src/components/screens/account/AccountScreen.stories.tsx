@@ -1,7 +1,6 @@
 import React from "react";
 import { Meta, StoryObj } from "@storybook/react";
 import { AccountScreenView } from "./AccountScreenView";
-import { IonContent, IonPage } from "@ionic/react";
 
 const meta: Meta<typeof AccountScreenView> = {
   title: "Screens/Accounts",

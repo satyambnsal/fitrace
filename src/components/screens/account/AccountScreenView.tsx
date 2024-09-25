@@ -1,4 +1,3 @@
-import { IonContent, IonPage } from "@ionic/react";
 import { Button } from "@/components/ui/button";
 import { Spinner } from "../../Spinner";
 import backgroundImg from "../../../assets/splash.png";
