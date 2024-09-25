@@ -18,10 +18,10 @@ import {
   GameRules,
   Settings,
   Layout,
+  Dashboard,
 } from "./components";
 import { WelcomeScreen } from "./components/screens/WelcomeScreen";
 import { AllowTrackingScreen } from "./components/screens/AllowTrackingScreen";
-import { Dashboard } from "./components/screens/Dashboard";
 
 type SetupResultType = Awaited<ReturnType<typeof setup>>;
 
@@ -30,11 +30,11 @@ export const App = () => {
     <IonApp>
       <IonReactRouter>
         <Layout>
-          <IonRouterOutlet>
-            {/* <Route exact path="/" component={AccountScreen} /> */}
+          <IonRouterOutlet className="flex justify-center">
+            <Route exact path="/" component={AccountScreen} />
             {/* <Route exact path="/" component={WelcomeScreen} /> */}
             {/* <Route exact path="/" component={AllowTrackingScreen} /> */}
-            <Route exact path="/" component={Dashboard} />
+            {/* <Route exact path="/" component={Dashboard} /> */}
             <Route path="/home" component={GameScreen} />
             <Route path="/rules" component={GameRules} />
             <Route path="/settings" component={Settings} />

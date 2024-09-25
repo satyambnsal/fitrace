@@ -21,7 +21,9 @@
     "sync": "npx cap sync",
     "copy": "npx cap copy",
     "build-sync": "bun run build && bun run copy && bun run sync",
-    "generate": "npx capacitor-assets generate --ios"
+    "generate": "npx capacitor-assets generate --ios",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
   },
   "dependencies": {
     "@capacitor-community/image-to-text": "^6.0.1",
@@ -72,6 +74,16 @@
     "@graphql-codegen/typescript": "^4.0.1",
     "@graphql-codegen/typescript-graphql-request": "^5.0.0",
     "@graphql-codegen/typescript-operations": "^4.0.1",
+    "@storybook/addon-essentials": "^8.3.3",
+    "@storybook/addon-interactions": "^8.3.3",
+    "@storybook/addon-links": "^8.3.3",
+    "@storybook/addon-onboarding": "^8.3.3",
+    "@storybook/blocks": "^8.3.3",
+    "@storybook/jest": "^0.2.3",
+    "@storybook/react": "^8.3.3",
+    "@storybook/react-vite": "^8.3.3",
+    "@storybook/test": "^8.3.3",
+    "@storybook/testing-library": "^0.2.2",
     "@types/node": "^20.4.8",
     "@types/react": "^18.2.33",
     "@types/react-dom": "^18.0.11",
@@ -84,8 +96,11 @@
     "eslint": "^8.38.0",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.3.4",
+    "eslint-plugin-storybook": "^0.8.0",
     "ionicons": "7.2.2",
     "postcss": "^8.4.38",
+    "rollup": "^4.22.4",
+    "storybook": "^8.3.3",
     "tailwindcss": "^3.4.3",
     "typescript": "5.2.2",
     "vite": "^4.3.9"
@@ -94,5 +109,10 @@
   "license": "ISC",
   "volta": {
     "node": "20.13.0"
+  },
+  "eslintConfig": {
+    "extends": [
+      "plugin:storybook/recommended"
+    ]
   }
 }

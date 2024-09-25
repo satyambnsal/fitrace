@@ -20,7 +20,7 @@ export const Layout: React.FC<LayoutProps> = ({ children }) => {
   const history = useHistory();
   return (
     <div className="min-h-full text-white">
-      <div className="bg-transparent backdrop-blur-xl border-b border-b-[#FFFFFF1a] fixed w-full">
+      <div className="bg-transparent fixed w-full">
         <div className="flex items-center justify-between px-4 py-4">
           {/* <Button
               className="flex items-center gap-2"
@@ -42,7 +42,7 @@ export const Layout: React.FC<LayoutProps> = ({ children }) => {
 
       <div className="pt-[72px]">
         {children}
-        {/* <BottomTabs /> */}
+        <BottomTabs />
       </div>
 
       <div></div>
