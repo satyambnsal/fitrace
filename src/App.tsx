@@ -1,37 +1,49 @@
-import { useComponentValue } from '@dojoengine/react'
-import { Entity } from '@dojoengine/recs'
-import { useEffect, useState } from 'react'
-import './App.css'
-import { Direction } from './utils'
-import { getEntityIdFromKeys } from '@dojoengine/utils'
-import { useDojo } from './dojo/useDojo'
-import { DojoProvider } from './dojo/DojoContext'
-import { dojoConfig } from '../dojoConfig'
-import { setup } from './dojo/generated/setup'
+import { useComponentValue } from "@dojoengine/react";
+import { Entity } from "@dojoengine/recs";
+import { useEffect, useState } from "react";
+import "./App.css";
+import { Direction } from "./utils";
+import { getEntityIdFromKeys } from "@dojoengine/utils";
+import { useDojo } from "./dojo/useDojo";
+import { DojoProvider } from "./dojo/DojoContext";
+import { dojoConfig } from "../dojoConfig";
+import { setup } from "./dojo/generated/setup";
 
-import { IonApp, IonRouterOutlet } from '@ionic/react'
-import { IonReactRouter } from '@ionic/react-router'
-import { Route } from 'react-router'
-import { GameScreen, AccountScreen, GameRules, Settings, Layout } from './components'
+import { IonApp, IonRouterOutlet } from "@ionic/react";
+import { IonReactRouter } from "@ionic/react-router";
+import { Route } from "react-router";
+import {
+  GameScreen,
+  AccountScreen,
+  GameRules,
+  Settings,
+  Layout,
+} from "./components";
+import { WelcomeScreen } from "./components/screens/WelcomeScreen";
+import { AllowTrackingScreen } from "./components/screens/AllowTrackingScreen";
+import { Dashboard } from "./components/screens/Dashboard";
 
-type SetupResultType = Awaited<ReturnType<typeof setup>>
+type SetupResultType = Awaited<ReturnType<typeof setup>>;
 
 export const App = () => {
   return (
-        <IonApp>
-          <IonReactRouter>
-          <Layout>
-            <IonRouterOutlet>
-                <Route path="/home" component={GameScreen} />
-                <Route exact path="/" component={AccountScreen} />
-                <Route path="/rules" component={GameRules} />
-                <Route path="/settings" component={Settings} />
-            </IonRouterOutlet>
-          </Layout>
-          </IonReactRouter>
-        </IonApp>
-  )
-}
+    <IonApp>
+      <IonReactRouter>
+        <Layout>
+          <IonRouterOutlet>
+            {/* <Route exact path="/" component={AccountScreen} /> */}
+            {/* <Route exact path="/" component={WelcomeScreen} /> */}
+            {/* <Route exact path="/" component={AllowTrackingScreen} /> */}
+            <Route exact path="/" component={Dashboard} />
+            <Route path="/home" component={GameScreen} />
+            <Route path="/rules" component={GameRules} />
+            <Route path="/settings" component={Settings} />
+          </IonRouterOutlet>
+        </Layout>
+      </IonReactRouter>
+    </IonApp>
+  );
+};
 
 // function MyApp() {
 //   const [setupResult, setSetupResult] = useState<SetupResultType>({} as SetupResultType)
