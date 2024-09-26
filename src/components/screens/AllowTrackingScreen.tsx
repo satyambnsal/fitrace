@@ -7,8 +7,8 @@ export const AllowTrackingScreen = () => {
       className="min-h-full flex justify-between flex-col text-white bg-cover bg-center relative text-left"
       style={{ backgroundImage: `url(${backgroundImg})` }}
     >
-      <div className="z-10 min-h-screen flex flex-col px-6 pb-8">
-        <div className="pt-5 ">
+      <div className="z-10 min-h-screen flex flex-col px-6 pb-8 pt-7">
+        <div className="pt-5">
           <h1 className="font-viga text-left mt-0">
             Fit
             <span className="text-[#FF5A5A]">Race</span>

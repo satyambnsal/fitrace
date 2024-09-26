@@ -1,24 +1,27 @@
 import { Button } from "@/components/ui/button";
 import { Spinner } from "../../Spinner";
 import backgroundImg from "../../../assets/splash.png";
+import { Logo } from "@/components/ui/logo";
 
 type AccountScreenProps = {
   createAccount: () => void;
   isLoading: boolean;
+  createNewWallet: () => void;
 };
 
 export const AccountScreenView = ({
   createAccount,
   isLoading,
+  createNewWallet,
 }: AccountScreenProps) => {
   return (
     <div
       className="min-h-full flex justify-between flex-col text-white bg-cover bg-center relative text-left"
       style={{ backgroundImage: `url(${backgroundImg})` }}
     >
-      <div className="z-10 min-h-screen flex flex-col">
+      <div className="z-10 min-h-screen flex flex-col pt-7">
         <div className="pt-5 px-6">
-          <h1 className="font-viga text-left mt-0">FitRace</h1>
+          <Logo />
         </div>
         {/* <div className="px-4 justify-center items-center flex flex-col gap-8 text-center w-full mt-auto">
               {!!account && (
@@ -69,7 +72,7 @@ export const AccountScreenView = ({
                 id="create-wallet"
                 size="lg"
                 className="w-full"
-                onClick={createAccount}
+                onClick={createNewWallet}
                 disabled={isLoading}
               >
                 Create a new wallet

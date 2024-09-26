@@ -1,5 +1,4 @@
 import React, { ReactNode } from "react";
-import backgroundImg from "../assets/background.png";
 import { Button } from "./ui/button";
 import { BottomTabs } from "./BottomTabs";
 
@@ -9,13 +8,10 @@ interface LayoutProps {
 
 export const Layout: React.FC<LayoutProps> = ({ children }) => {
   return (
-    <div
-      style={{ backgroundImage: `url(${backgroundImg})` }}
-      className="min-h-full text-white"
-    >
-      <div className="bg-transparent backdrop-blur-xl border-b border-b-[#FFFFFF1a] fixed w-full">
+    <div className="min-h-full text-white bg-background">
+      {/* <div className="bg-transparent backdrop-blur-xl border-b border-b-[#FFFFFF1a] fixed w-full">
         <div className="flex items-center justify-between px-4 py-4">
-          {/* <Button
+          <Button
               className="flex items-center gap-2"
               variant="gradient"
               onClick={() => {
@@ -29,16 +25,14 @@ export const Layout: React.FC<LayoutProps> = ({ children }) => {
                 color="#A91D3A"
               />
               Go Back
-            </Button> */}
+            </Button>
         </div>
-      </div>
+      </div> */}
 
-      <div className="pt-[72px]">
+      <div>
         {children}
-        <BottomTabs />
+        {/* <BottomTabs /> */}
       </div>
-
-      <div></div>
     </div>
   );
 };

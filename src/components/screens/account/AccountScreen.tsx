@@ -1,12 +1,17 @@
 import { useAccounts } from "@/hooks/useAccounts";
 import { AccountScreenView } from "./AccountScreenView";
 import { useHistory } from "react-router";
+import { useNavigate } from "react-router-dom";
 
 export const AccountScreen = () => {
-  const { createAccount, isLoading, error, account } = useAccounts();
-  const history = useHistory();
+  const { createAccount, isLoading } = useAccounts();
+  const navigate = useNavigate();
 
   return (
-    <AccountScreenView createAccount={createAccount} isLoading={isLoading} />
+    <AccountScreenView
+      createAccount={createAccount}
+      isLoading={isLoading}
+      createNewWallet={() => navigate("/welcome")}
+    />
   );
 };

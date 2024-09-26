@@ -1,68 +1,22 @@
-import { Bell, FileWarning, Wallet } from "lucide-react";
-import { Button } from "../../ui/button";
-import walletPath from "../../../assets/wallet.svg";
-import yellowTriangleWarningPath from "../../../assets/yellowTriangleWarning.svg";
-import frtTokenPath from "../../../assets/frtToken.svg";
-import starknetIconPath from "../../../assets/starknetIcon.svg";
-import ethSymbolPath from "../../../assets/ethSymbol.svg";
-import shoes2BgPath from "../../../assets/shoes2Bg.png";
-import stepsYellowImgPath from "../../../assets/stepsYellow.png";
-import stepsBgPath from "../../../assets/stepsBg.png";
+import { Button } from "@/components/ui/button";
+import shoes2BgPath from "@/assets/shoes2Bg.png";
+import stepsYellowImgPath from "@/assets/stepsYellow.png";
+import stepsBgPath from "@/assets/stepsBg.png";
+import { Header } from "@/components";
+import locationIconPath from "@/assets/locationGreen.svg";
+import fireIconPath from "@/assets/fire.svg";
+import calendarPath from "@/assets/calendar.svg";
+import flagPath from "@/assets/flag.svg";
+import trophyPath from "@/assets/trophy.svg";
+import { TrackingPermissionModal } from "@/components/modals/TrackingPermissionModal";
 
-export const DashboardView = () => {
+type DashboardView = {
+  seeAllClick: () => void;
+};
+
+export const DashboardView = ({ seeAllClick }: DashboardView) => {
   return (
-    <div className="p-4 text-start max-w-[500px]">
-      <header className="flex  items-center justify-between">
-        <h1 className="font-viga text-left mt-0 text-4xl">
-          Fit
-          <span className="text-[#FF5A5A]">Race</span>
-        </h1>
-
-        <div className="flex items-center gap-3">
-          <button>
-            <Bell />
-          </button>
-
-          <button className="bg-white rounded-[10px] px-[10px] py-2 flex items-center gap-2">
-            <img src={walletPath} alt="wallet" />
-            <p className="text-black text-[10px]">0x597..1</p>
-          </button>
-        </div>
-      </header>
-
-      <aside className="bg-[#343434] rounded-[5px] py-2 px-3 flex items-center justify-between gap-2 mt-3">
-        <div>
-          <img src={yellowTriangleWarningPath} alt="warning" />
-        </div>
-
-        <div>
-          <p className="text-xs">
-            allow the persmission helps us to track your steps
-          </p>
-        </div>
-
-        <div>
-          <Button size="sm" className="text-xs px-[22px]">
-            allow
-          </Button>
-        </div>
-      </aside>
-
-      <div className="items-center justify-between gap-2 grid grid-cols-3 mt-4">
-        <div className="border-2 border-[#363636] rounded-xl py-[13px] px-3 flex items-center justify-center gap-3">
-          <img src={starknetIconPath} alt="starknet" />
-          <p className="text-xs">30 STRK</p>
-        </div>
-        <div className="border-2 border-[#363636] rounded-xl py-[13px] px-3 flex items-center justify-center gap-3">
-          <img src={frtTokenPath} alt="starknet" />
-          <p className="text-xs">3000 FRT </p>
-        </div>
-        <div className="border-2 border-[#363636] rounded-xl py-[13px] px-3 flex items-center justify-center gap-3">
-          <img src={ethSymbolPath} alt="starknet" />
-          <p className="text-xs">500 ETH</p>
-        </div>
-      </div>
-
+    <div className="text-start max-w-[500px] pb-8">
       <div
         className="p-4 min-h-[250px] rounded-lg mt-4 flex flex-col justify-between bg-no-repeat bg-cover bg-bottom"
         style={{ backgroundImage: `url(${shoes2BgPath})` }}
@@ -85,24 +39,115 @@ export const DashboardView = () => {
         </div>
       </div>
 
-      <div
-        className="mt-4 py-5 px-6 flex justify-between gap-3 items-center rounded-xl bg-no-repeat bg-cover"
-        style={{ backgroundImage: `url(${stepsBgPath})` }}
-      >
-        <div>
-          <div>
-            <img src={stepsYellowImgPath} alt="steps" />
+      <div className="mt-4 flex flex-col gap-4">
+        <div className="grid grid-cols-2 gap-3">
+          <div
+            className="py-3 px-6 flex flex-col justify-between gap-4 items-center rounded-xl bg-no-repeat bg-cover"
+            style={{ backgroundImage: `url(${stepsBgPath})` }}
+          >
+            <div>
+              <img src={stepsYellowImgPath} alt="steps" />
+            </div>
+            <div className="text-center">
+              <p className="text-xl font-semibold">4354</p>
+              <p className="text-sm">steps</p>
+            </div>
           </div>
-          <div className="text-center">
-            <p className="text-xl font-semibold">4354</p>
-            <p className="text-sm">steps</p>
+
+          <div className="flex flex-col">
+            <div
+              className="py-1 h-full px-6 flex justify-between gap-4 items-center rounded-xl bg-no-repeat bg-cover min-h-[82px]"
+              style={{ backgroundImage: `url(${stepsBgPath})` }}
+            >
+              <div>
+                <img src={locationIconPath} alt="location" />
+              </div>
+              <div className="text-center">
+                <p className="text-xl font-semibold">2000</p>
+                <p className="text-sm">Miles</p>
+              </div>
+            </div>
+
+            <div
+              className="mt-4 py-1 h-full px-6 flex justify-between gap-4 items-center rounded-xl bg-no-repeat bg-cover min-h-[82px]"
+              style={{ backgroundImage: `url(${stepsBgPath})` }}
+            >
+              <div>
+                <img src={fireIconPath} alt="fire" />
+              </div>
+              <div className="text-center">
+                <p className="text-xl font-semibold">500</p>
+                <p className="text-sm">Kal</p>
+              </div>
+            </div>
           </div>
         </div>
-
         <div>
-          <Button className="rounded-[12px] min-h-[46px] min-w-[191px] font-semibold">
+          <Button className="rounded-[12px] min-h-[46px] min-w-[191px] font-semibold w-full">
             Claim 2000 FRT
           </Button>
+        </div>
+      </div>
+
+      <div className="mt-4">
+        <div className="flex  items-center justify-between gap-3 mb-2">
+          <h2 className="text-2xl">Challanges</h2>
+          <button onClick={seeAllClick}>see all</button>
+        </div>
+
+        <div className="flex items-center gap-4 justify-between bg-[#3F320D] rounded-[5px] py-1 px-3 border border-primary">
+          <p className="text-xs">
+            Earn bonus rewards by inviting friends to join challenges
+          </p>
+          <Button size="sm" className="px-5">
+            invite
+          </Button>
+        </div>
+
+        <div className="p-[1px] bg-gradient-to-r from-[#9A9A9A] to-[#308422] rounded-2xl mt-3">
+          <div className="bg-background text-white p-4 rounded-2xl flex items-end justify-between">
+            <div>
+              <div className="flex gap-2 items-center mb-1">
+                <span className="bg-[#FF8585] text-[10px] px-2 py-[1px] rounded-3xl">
+                  2 days left
+                </span>
+                <button className="bg-[#3A89FF] text-[10px] px-2 py-[1px] rounded-3xl">
+                  invite friends
+                </button>
+              </div>
+              <h3 className="font-bold mb-1">Join October Running Challenge</h3>
+              <ul className="flex  flex-col gap-1 text-muted">
+                <li className="text-sm mb-1 flex items-center gap-1">
+                  <span className="mr-2">
+                    <img src={calendarPath} alt="calendar" />
+                  </span>
+                  <span>Oct 1 - Oct 30</span>
+                </li>
+
+                <li className="text-sm mb-1 flex items-center gap-1">
+                  <span className="mr-2">
+                    <img src={flagPath} alt="flag" />
+                  </span>
+                  <span>Complete 5km in a month</span>
+                </li>
+
+                <li className="text-sm mb-1 flex items-center gap-1">
+                  <span className="mr-2">
+                    <img src={trophyPath} alt="calendar" width={13} />
+                  </span>
+                  <span>Oct 1 - Oct 30</span>
+                </li>
+              </ul>
+            </div>
+
+            <Button
+              size="sm"
+              className="px-[26px] h-[28px] rounded-xl"
+              variant="brown"
+            >
+              JOIN{" "}
+            </Button>
+          </div>
         </div>
       </div>
     </div>

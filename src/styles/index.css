@@ -6,7 +6,8 @@
 
 @layer base {
     :root {
-        --background: 0 0% 100%;
+        --background: 0, 0%, 10%;
+        /* same as #191919; */
         --foreground: 0 0% 3.9%;
 
         --card: 0 0% 100%;
@@ -16,6 +17,7 @@
         --popover-foreground: 0 0% 3.9%;
 
         --primary: 47, 98%, 60%;
+        /* also #FDD033 is the --primary*/
         --primary-foreground: 0 0% 0%;
 
         --secondary: 0 0% 96.1%;
@@ -38,7 +40,7 @@
     }
 
     .dark {
-        --background: 0 0% 3.9%;
+        --background: 0 0% 0%;
         --foreground: 0 0% 98%;
 
         --card: 0 0% 3.9%;

@@ -1,10 +1,10 @@
 import React from "react";
 import { Meta, StoryObj } from "@storybook/react";
-import { DashboardView } from "./DashboardView"; // Adjust the import path as needed
+import { WelcomeScreenView } from "./WelcomeScreenView"; // Adjust the import path as needed
 
-const meta: Meta<typeof DashboardView> = {
-  title: "Screens/Dashboard",
-  component: DashboardView,
+const meta: Meta<typeof WelcomeScreenView> = {
+  title: "Screens/Welcome",
+  component: WelcomeScreenView,
   parameters: {
     layout: "fullscreen",
   },
@@ -19,7 +19,7 @@ const meta: Meta<typeof DashboardView> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof DashboardView>;
+type Story = StoryObj<typeof WelcomeScreenView>;
 
 // Basic story
 export const Default: Story = {};
@@ -34,8 +34,7 @@ export const LoadingState: Story = {
 
 export const WithData: Story = {
   args: {
-    // Example data
-    seeAllClick: () => console.log("CLICKED ON SEE ALL ON STORY"),
+    navigateToDashboard: () => console.log("navigate to dashboard"),
   },
 };
 

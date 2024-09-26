@@ -1,10 +1,10 @@
 import React from "react";
 import { Meta, StoryObj } from "@storybook/react";
-import { DashboardView } from "./DashboardView"; // Adjust the import path as needed
+import { LeaderboardView } from "./LeaderboardView"; // Adjust the import path as needed
 
-const meta: Meta<typeof DashboardView> = {
-  title: "Screens/Dashboard",
-  component: DashboardView,
+const meta: Meta<typeof LeaderboardView> = {
+  title: "Screens/Leaderboard",
+  component: LeaderboardView,
   parameters: {
     layout: "fullscreen",
   },
@@ -19,7 +19,7 @@ const meta: Meta<typeof DashboardView> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof DashboardView>;
+type Story = StoryObj<typeof LeaderboardView>;
 
 // Basic story
 export const Default: Story = {};

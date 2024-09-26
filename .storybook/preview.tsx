@@ -1,7 +1,6 @@
 import type { Preview } from "@storybook/react";
 import "../src/App.css";
 import "../src/styles/index.css";
-import "../src/styles/variable.css";
 import React from "react";
 
 const preview: Preview = {
@@ -22,11 +21,8 @@ const preview: Preview = {
   decorators: [
     (Story) => {
       return (
-        <div className="flex items-center justify-center bg-black">
-          <div
-            className="min-h-screen text-white bg-black"
-            style={{ background: "black" }}
-          >
+        <div className="flex items-center justify-center bg-background">
+          <div className="min-h-screen text-white bg-background">
             <Story />
           </div>
         </div>

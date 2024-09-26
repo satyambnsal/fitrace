@@ -1,4 +1,4 @@
-import { Plus } from "lucide-react";
+import { LockOpen, Plus } from "lucide-react";
 import shoesPath from "../../assets/shoes1.png";
 import { Button } from "../ui/button";
 import { useState } from "react";
@@ -6,20 +6,20 @@ import { useState } from "react";
 export const TrackingPermissionModal = ({
   openedModal,
 }: {
-  openedModal: boolean;
+  openedModal?: boolean;
 }) => {
   const [isOpenModal, setIsOpenModal] = useState(openedModal || false);
   return (
     <>
-      {/* <div>
-        <Button
+      <div>
+        <button
           onClick={() => {
             setIsOpenModal(!isOpenModal);
           }}
         >
-          Open Modal
-        </Button>
-      </div> */}
+          <LockOpen />
+        </button>
+      </div>
 
       <div
         className={`bg-red/90 fixed left-0 right-0 flex flex-col transition-all ${
