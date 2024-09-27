@@ -20,7 +20,8 @@
         /* also #FDD033 is the --primary*/
         --primary-foreground: 0 0% 0%;
 
-        --secondary: 0 0% 96.1%;
+        --secondary: 0 0% 100%; 
+        /* same as white or #FFFFFF */
         --secondary-foreground: 0 0% 9%;
 
         --muted: 0, 0%, 53%;

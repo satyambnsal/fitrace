@@ -5,8 +5,11 @@ import { useNavigate } from "react-router-dom";
 export const Notifications = () => {
   const navigate = useNavigate();
   return (
-    <div className="">
-      <NotificationsView onBackClick={() => navigate(-1)} />
+    <div className="pb-[55px]">
+      <NotificationsView
+        onBackClick={() => navigate(-1)}
+        onClickRequests={() => navigate("/follow-requests")}
+      />
     </div>
   );
 };

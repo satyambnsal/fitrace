@@ -22,7 +22,7 @@ export const TrackingPermissionModal = ({
       </div>
 
       <div
-        className={`bg-red/90 fixed left-0 right-0 flex flex-col transition-all ${
+        className={`bg-red/90 fixed left-0 right-0 flex flex-col transition-all z-10 ${
           isOpenModal ? "bottom-0 top-0" : "-bottom-full"
         }`}
         onClick={(e) => {
@@ -30,7 +30,7 @@ export const TrackingPermissionModal = ({
         }}
       >
         <div
-          className="bg-black/90 text-center rounded-t-[50px] px-8 pb-12 pt-16 shadow-[0px_4px_4px_0px_#00000040] mt-auto relative"
+          className="bg-black/90 text-center rounded-t-[50px] px-8 pb-12 pt-16 shadow-[0px_4px_4px_0px_#00000040] mt-auto relative z-20"
           onClick={(e) => e.stopPropagation()}
         >
           <button

@@ -55,12 +55,14 @@ export const LEADERBOARD_PLAYERS = [
     rank: 1,
     steps: "15,342",
     profileUrl: SAMPLE_PROFILE_URL,
+    frtToken: "15,342",
   },
   {
     name: "Alex Starling",
     rank: 2,
     steps: "15,342",
     profileUrl: SAMPLE_PROFILE_URL,
+    frtToken: "15,342",
   },
 
   {
@@ -68,39 +70,69 @@ export const LEADERBOARD_PLAYERS = [
     rank: 3,
     steps: "15,342",
     profileUrl: SAMPLE_PROFILE_URL,
+    frtToken: "15,342",
   },
   {
     name: "Alex Starling",
     rank: 4,
-    steps: "15,342",
+    steps: "25,342",
     profileUrl: SAMPLE_PROFILE_URL,
+    frtToken: "25,342",
   },
 
   {
     name: "Alex Starling",
     rank: 5,
-    steps: "15,342",
+    steps: "23,422",
     profileUrl: SAMPLE_PROFILE_URL,
+    frtToken: "23,422",
   },
   {
     name: "Alex Starling",
     rank: 6,
     steps: "15,342",
     profileUrl: SAMPLE_PROFILE_URL,
+    frtToken: "15,342",
   },
 
   {
     name: "Alex Starling",
     rank: 7,
-    steps: "15,342",
+    steps: "15,200",
     profileUrl: SAMPLE_PROFILE_URL,
+    frtToken: "15,200",
   },
 
   {
     name: "Alex Starling",
     rank: 8,
-    steps: "15,342",
+    steps: "10,242",
     profileUrl: SAMPLE_PROFILE_URL,
+    frtToken: "10,242",
+  },
+
+  {
+    name: "Alex Starling",
+    rank: 9,
+    steps: "10,242",
+    profileUrl: SAMPLE_PROFILE_URL,
+    frtToken: "10,242",
+  },
+
+  {
+    name: "Alex Starling",
+    rank: 10,
+    steps: "10,242",
+    profileUrl: SAMPLE_PROFILE_URL,
+    frtToken: "10,242",
+  },
+
+  {
+    name: "Alex Starling",
+    rank: 11,
+    steps: "10,242",
+    profileUrl: SAMPLE_PROFILE_URL,
+    frtToken: "10,242",
   },
 ];
 
@@ -118,6 +150,23 @@ export const NOTIFICATIONS_CONTENT = [
   {
     title: "Time to move! Start earning now by taking your first steps today!",
     date: "September 22 2024",
+    personImgUrl: SAMPLE_PROFILE_URL,
+  },
+];
+
+export const REQUESTS_DATA = [
+  {
+    username: "username",
+    personImgUrl: SAMPLE_PROFILE_URL,
+  },
+
+  {
+    username: "alex",
+    personImgUrl: SAMPLE_PROFILE_URL,
+  },
+
+  {
+    username: "bob",
     personImgUrl: SAMPLE_PROFILE_URL,
   },
 ];

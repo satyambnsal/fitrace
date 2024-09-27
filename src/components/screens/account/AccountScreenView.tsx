@@ -1,18 +1,20 @@
 import { Button } from "@/components/ui/button";
-import { Spinner } from "../../Spinner";
-import backgroundImg from "../../../assets/splash.png";
+import backgroundImg from "@/assets/splash.png";
 import { Logo } from "@/components/ui/logo";
+import { Spinner } from "@/components/Spinner";
 
 type AccountScreenProps = {
   createAccount: () => void;
   isLoading: boolean;
   createNewWallet: () => void;
+  addExistingWallet: () => void;
 };
 
 export const AccountScreenView = ({
   createAccount,
   isLoading,
   createNewWallet,
+  addExistingWallet,
 }: AccountScreenProps) => {
   return (
     <div
@@ -96,6 +98,7 @@ export const AccountScreenView = ({
                 variant="outline"
                 size="lg"
                 className="w-full"
+                onClick={addExistingWallet}
               >
                 Add Existing one
               </Button>

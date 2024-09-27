@@ -8,7 +8,6 @@ import {
 } from "capacitor-healthkit-dojo";
 import { useState } from "react";
 import { getStartAndEndOfDay } from "../../utils";
-import { BottomTabs } from "../../components";
 import { Button } from "../ui/button";
 import {
   Card,

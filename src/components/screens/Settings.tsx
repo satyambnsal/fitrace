@@ -1,5 +1,4 @@
 import { Button } from "../ui/button";
-import { BottomTabs } from "../BottomTabs";
 import { useAccounts } from "../../hooks/useAccounts";
 import { trimStringWithEllipsis } from "../../utils";
 import { Spinner } from "@/components/Spinner";

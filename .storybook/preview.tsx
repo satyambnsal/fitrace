@@ -22,7 +22,7 @@ const preview: Preview = {
     (Story) => {
       return (
         <div className="flex items-center justify-center bg-background">
-          <div className="min-h-screen text-white bg-background">
+          <div className="min-h-screen text-white bg-background w-full max-w-[500px]">
             <Story />
           </div>
         </div>

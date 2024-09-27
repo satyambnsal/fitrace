@@ -1,15 +1,19 @@
 import React, { ReactNode } from "react";
 import { Button } from "./ui/button";
-import { BottomTabs } from "./BottomTabs";
+import { Toaster } from "sonner";
+import { useTabNavigation } from "@/hooks/useTabNavigation";
+import { TabBar } from "@/components";
 
 interface LayoutProps {
   children: ReactNode;
 }
 
 export const Layout: React.FC<LayoutProps> = ({ children }) => {
+  const { shouldShowTabs } = useTabNavigation();
   return (
-    <div className="min-h-full text-white bg-background">
-      {/* <div className="bg-transparent backdrop-blur-xl border-b border-b-[#FFFFFF1a] fixed w-full">
+    <>
+      <div className="min-h-full text-white bg-background">
+        {/* <div className="bg-transparent backdrop-blur-xl border-b border-b-[#FFFFFF1a] fixed w-full">
         <div className="flex items-center justify-between px-4 py-4">
           <Button
               className="flex items-center gap-2"
@@ -29,10 +33,12 @@ export const Layout: React.FC<LayoutProps> = ({ children }) => {
         </div>
       </div> */}
 
-      <div>
-        {children}
-        {/* <BottomTabs /> */}
+        <div>
+          {children}
+          {shouldShowTabs && <TabBar />}
+        </div>
       </div>
-    </div>
+      <Toaster theme="dark" />
+    </>
   );
 };

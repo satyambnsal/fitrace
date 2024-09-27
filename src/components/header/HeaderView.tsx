@@ -16,6 +16,7 @@ type HederViewProps = {
   allowPermissionWarning?: boolean;
   onNotificationClicked: () => void;
   onLogoClick: () => void;
+  title?: string;
 };
 
 const TokenBadge = ({
@@ -48,13 +49,18 @@ export const HeaderView = ({
   allowPermissionWarning,
   onNotificationClicked,
   onLogoClick,
+  title,
 }: HederViewProps) => {
   return (
     <>
       <header className="flex items-center justify-between pb-4 pt-7 mt-4">
-        <button onClick={onLogoClick}>
-          <Logo size="lg" />
-        </button>
+        {title ? (
+          <h2 className="text-2xl">{title}</h2>
+        ) : (
+          <button onClick={onLogoClick}>
+            <Logo size="lg" />
+          </button>
+        )}
 
         <div className="flex items-center gap-3">
           <TrackingPermissionModal />

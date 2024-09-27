@@ -8,7 +8,6 @@ import fireIconPath from "@/assets/fire.svg";
 import calendarPath from "@/assets/calendar.svg";
 import flagPath from "@/assets/flag.svg";
 import trophyPath from "@/assets/trophy.svg";
-import { TrackingPermissionModal } from "@/components/modals/TrackingPermissionModal";
 
 type DashboardView = {
   seeAllClick: () => void;

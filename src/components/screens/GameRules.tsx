@@ -1,6 +1,5 @@
 import { useNavigate } from "react-router-dom";
 import { Button } from "../ui/button";
-import { BottomTabs } from "../BottomTabs";
 import arrow from "../../assets/arrow.svg";
 import backgroundImg from "../../assets/background.png";
 

@@ -11,7 +11,8 @@ export const AccountScreen = () => {
     <AccountScreenView
       createAccount={createAccount}
       isLoading={isLoading}
-      createNewWallet={() => navigate("/welcome")}
+      createNewWallet={() => navigate("/created-wallet")}
+      addExistingWallet={() => navigate("/existing-wallets")}
     />
   );
 };
