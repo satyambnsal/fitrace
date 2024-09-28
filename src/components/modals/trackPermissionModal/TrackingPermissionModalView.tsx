@@ -1,9 +1,9 @@
 import { LockOpen, Plus } from "lucide-react";
-import shoesPath from "../../assets/shoes1.png";
-import { Button } from "../ui/button";
+import shoesPath from "@/assets/shoes1.png";
+import { Button } from "@/components/ui/button";
 import { useState } from "react";
 
-export const TrackingPermissionModal = ({
+export const TrackingPermissionModalView = ({
   openedModal,
 }: {
   openedModal?: boolean;

@@ -14,7 +14,6 @@ export const CreatedWallet = () => {
 
   return (
     <CreatedWalletView
-      walletAddress="B62qk1KqJq2m59NJuPmHHWDFsejzc21Hr8gcHqWYfhM51dwpsVxtEQS"
       truncatedWalletAddress={trimStringWithEllipsis(
         "B62qk1KqJq2m59NJuPmHHWDFsejzc21Hr8gcHqWYfhM51dwpsVxtEQS"
       )}

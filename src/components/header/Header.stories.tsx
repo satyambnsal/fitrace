@@ -23,17 +23,20 @@ type Story = StoryObj<typeof HeaderView>;
 export const Default: Story = {
   args: {
     allowPermissionWarning: true,
+    onNotificationClicked: () => console.log("HI"),
+    onLogoClick: () => console.log("HI"),
+    title: "TITLE HERE",
+    showTokens: false,
   },
 };
 
 export const PermissionWarning: Story = {
   args: {
     allowPermissionWarning: false,
-  },
-};
-
-export const ErrorState: Story = {
-  args: {
-    // Example: error: 'Failed to load dashboard data'
+    onNotificationClicked: () => console.log("HI"),
+    onLogoClick: () => console.log("HI"),
+    title: "TITLE HERE",
+    showTokens: true,
+    // showTokens?: boolean;
   },
 };

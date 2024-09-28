@@ -23,6 +23,7 @@ import {
   CreatedWallet,
   ExistingWallets,
   FollowRequests,
+  Discover,
 } from "./components";
 
 type SetupResultType = Awaited<ReturnType<typeof setup>>;
@@ -39,6 +40,7 @@ export const App = () => {
           <Route path="/welcome" element={<WelcomeScreen />} />
           <Route path="/home" element={<GameScreen />} />
           <Route path="/leaderboard" element={<Leaderboard />} />
+          <Route path="/discover" element={<Discover />} />
           <Route path="/notifications" element={<Notifications />} />
           <Route path="/follow-requests" element={<FollowRequests />} />
           <Route path="/rules" element={<GameRules />} />

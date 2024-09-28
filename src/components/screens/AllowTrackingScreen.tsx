@@ -1,4 +1,4 @@
-import { TrackingPermissionModal } from "../modals/TrackingPermissionModal";
+import { TrackingPermissionModal } from "../modals/trackPermissionModal/TrackingPermissionModal";
 import backgroundImg from "../../assets/splash.png";
 
 export const AllowTrackingScreen = () => {

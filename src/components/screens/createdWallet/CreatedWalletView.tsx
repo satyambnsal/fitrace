@@ -3,17 +3,14 @@ import backgroundImg from "@/assets/splash.png";
 import { Button } from "@/components/ui/button";
 import { Spinner } from "@/components/Spinner";
 import { Copy } from "lucide-react";
-import { trimStringWithEllipsis } from "@/utils";
 
 type CreatedWalletViewType = {
-  walletAddress: string;
-  onClickCopy: () => void;
+  onClickCopy?: () => void;
   truncatedWalletAddress: string;
   onClickContinue: () => void;
 };
 
 export const CreatedWalletView = ({
-  walletAddress,
   onClickCopy,
   truncatedWalletAddress,
   onClickContinue,

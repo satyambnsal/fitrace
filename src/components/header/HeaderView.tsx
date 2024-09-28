@@ -1,10 +1,10 @@
 import { Bell } from "lucide-react";
-import { Logo } from "../ui/logo";
+import { Logo } from "@/components/ui/logo";
 import walletPath from "@/assets/wallet.svg";
 import yellowTriangleWarningPath from "@/assets/yellowTriangleWarning.svg";
-import { Button } from "../ui/button";
+import { Button } from "@/components/ui/button";
 import { TOKEN_BADGES_DATA } from "@/constants";
-import { TrackingPermissionModal } from "../modals/TrackingPermissionModal";
+import { TrackingPermissionModal } from "..";
 
 type TokenBadgeProps = {
   tokenSymbol: string;
@@ -17,6 +17,7 @@ type HederViewProps = {
   onNotificationClicked: () => void;
   onLogoClick: () => void;
   title?: string;
+  showTokens?: boolean;
 };
 
 const TokenBadge = ({
@@ -50,9 +51,10 @@ export const HeaderView = ({
   onNotificationClicked,
   onLogoClick,
   title,
+  showTokens,
 }: HederViewProps) => {
   return (
-    <>
+    <div className="fixed top-0 left-0 right-0 px-4 bg-background pb-2 shadow-[inset_0_-8px_8px_-8px_rgba(255,255,255,0.1)]">
       <header className="flex items-center justify-between pb-4 pt-7 mt-4">
         {title ? (
           <h2 className="text-2xl">{title}</h2>
@@ -63,7 +65,7 @@ export const HeaderView = ({
         )}
 
         <div className="flex items-center gap-3">
-          <TrackingPermissionModal />
+          <TrackingPermissionModal openedModal={false} />
 
           <button onClick={onNotificationClicked}>
             <Bell />
@@ -96,17 +98,19 @@ export const HeaderView = ({
         </aside>
       )}
 
-      <div className="items-center justify-between gap-2 grid grid-cols-3">
-        {TOKEN_BADGES_DATA.map((badge, index) => (
-          <TokenBadge
-            key={badge.tokenSymbol}
-            tokenSymbol={badge.tokenSymbol}
-            amount={badge.amount}
-            symbolUrl={badge.symbolUrl}
-            index={index}
-          />
-        ))}
-      </div>
-    </>
+      {showTokens && (
+        <div className="items-center justify-between gap-2 grid grid-cols-3">
+          {TOKEN_BADGES_DATA.map((badge, index) => (
+            <TokenBadge
+              key={badge.tokenSymbol}
+              tokenSymbol={badge.tokenSymbol}
+              amount={badge.amount}
+              symbolUrl={badge.symbolUrl}
+              index={index}
+            />
+          ))}
+        </div>
+      )}
+    </div>
   );
 };

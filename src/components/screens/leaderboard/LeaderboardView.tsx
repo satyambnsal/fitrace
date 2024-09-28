@@ -13,7 +13,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 export const LeaderboardView = () => {
   return (
-    <div className="text-left mt-4">
+    <div className="text-left">
       <Tabs defaultValue="steps" className="w-full">
         <div>
           <h2 className="mb-3 flex items-center gap-1">
@@ -93,7 +93,7 @@ export const LeaderboardView = () => {
           </div>
         </div>
 
-        <div className="bg-[#100C0C] rounded-t-xl mt-4 max-h-[calc(100svh-514px)] overflow-auto relative">
+        <div className="bg-[#100C0C] rounded-t-xl mt-4 max-h-[calc(100svh-440px)] overflow-auto relative">
           <Table>
             <TableHeader className="sticky top-0 bg-[#100C0C]">
               <TableRow>

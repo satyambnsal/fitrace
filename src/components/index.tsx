@@ -14,3 +14,7 @@ export { Notifications } from "@/components/screens/notifications/Notifications"
 export { CreatedWallet } from "@/components/screens/createdWallet/CreatedWallet";
 export { ExistingWallets } from "@/components/screens/existingWallets/ExistingWallets";
 export { FollowRequests } from "@/components/screens/followRequests/FollowRequests";
+export { TrackingPermissionModal } from "@/components/modals/trackPermissionModal/TrackingPermissionModal";
+export { ShoesInfoModal } from "@/components/modals/shoesInfoModal/ShoesInfoModal";
+export { Challenges } from "@/components/screens/challenges/Challenges";
+export { Discover } from "@/components/screens/discover/Discover";

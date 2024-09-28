@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import shoes2BgPath from "@/assets/shoes2Bg.png";
 import stepsYellowImgPath from "@/assets/stepsYellow.png";
 import stepsBgPath from "@/assets/stepsBg.png";
-import { Header } from "@/components";
+import { ShoesInfoModal } from "@/components";
 import locationIconPath from "@/assets/locationGreen.svg";
 import fireIconPath from "@/assets/fire.svg";
 import calendarPath from "@/assets/calendar.svg";
@@ -17,9 +17,10 @@ export const DashboardView = ({ seeAllClick }: DashboardView) => {
   return (
     <div className="text-start max-w-[500px] pb-8">
       <div
-        className="p-4 min-h-[250px] rounded-lg mt-4 flex flex-col justify-between bg-no-repeat bg-cover bg-bottom"
+        className="p-4 min-h-[250px] rounded-lg flex flex-col justify-between bg-no-repeat bg-cover bg-bottom"
         style={{ backgroundImage: `url(${shoes2BgPath})` }}
       >
+        <ShoesInfoModal />
         <div>
           <h2 className="text-2xl font-bold mt-0 mb-1">Get Your Shoes</h2>
           <p className="text-[11px]">
