@@ -30,8 +30,17 @@
         --accent: 0 0% 96.1%;
         --accent-foreground: 0 0% 9%;
 
-        --destructive: 0 84.2% 60.2%;
+        --destructive: 0, 100%, 76%;
+        /* same as #FF8585 */
         --destructive-foreground: 0 0% 98%;
+
+        --success: 122, 64%, 46%;
+        /* same as #2AC030 */
+        --success-foreground: 0 0% 100%;
+
+        --warning: 45, 100%, 51%;
+        /* same as #FFC107 */
+        --warning-foreground: 0 0% 100%;
 
         --border: 0 0% 89.8%;
         --input: 0 0% 89.8%;

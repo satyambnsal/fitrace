@@ -108,7 +108,7 @@ export const DashboardView = ({ seeAllClick }: DashboardView) => {
           <div className="bg-background text-white p-4 rounded-2xl flex items-end justify-between">
             <div>
               <div className="flex gap-2 items-center mb-1">
-                <span className="bg-[#FF8585] text-[10px] px-2 py-[1px] rounded-3xl">
+                <span className="bg-destructive text-[10px] px-2 py-[1px] rounded-3xl">
                   2 days left
                 </span>
                 <button className="bg-[#3A89FF] text-[10px] px-2 py-[1px] rounded-3xl">

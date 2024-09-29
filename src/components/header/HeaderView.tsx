@@ -4,7 +4,7 @@ import walletPath from "@/assets/wallet.svg";
 import yellowTriangleWarningPath from "@/assets/yellowTriangleWarning.svg";
 import { Button } from "@/components/ui/button";
 import { TOKEN_BADGES_DATA } from "@/constants";
-import { TrackingPermissionModal } from "..";
+import { TrackingPermissionModal } from "@/components";
 
 type TokenBadgeProps = {
   tokenSymbol: string;
