@@ -9,11 +9,11 @@ import calendarPath from "@/assets/calendar.svg";
 import flagPath from "@/assets/flag.svg";
 import trophyPath from "@/assets/trophy.svg";
 
-type DashboardView = {
+type DashboardViewProps = {
   seeAllClick: () => void;
 };
 
-export const DashboardView = ({ seeAllClick }: DashboardView) => {
+export const DashboardView = ({ seeAllClick }: DashboardViewProps) => {
   return (
     <div className="text-start max-w-[500px] pb-8">
       <div

@@ -18,3 +18,4 @@ export { TrackingPermissionModal } from "@/components/modals/trackPermissionModa
 export { ShoesInfoModal } from "@/components/modals/shoesInfoModal/ShoesInfoModal";
 export { Challenges } from "@/components/screens/discover/tabs/challenges/Challenges";
 export { Discover } from "@/components/screens/discover/Discover";
+export { Challenge } from "@/components/screens/discover/tabs/challenges/challenge/Challenge";

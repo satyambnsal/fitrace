@@ -1,6 +1,5 @@
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-
-import { ChallengesView } from "./tabs/challenges/ChallengesView";
+import { Challenges } from "@/components";
 
 const TABS_TRIGGER_CLASSES =
   "bg-[#303030] border-none h-[35px] rounded-[20px] text-white data-[state=active]:bg-white data-[state=active]:text-black px-6 py-1";
@@ -22,7 +21,7 @@ export const DiscoverView = () => {
         </TabsList>
         <div className="mt-6">
           <TabsContent value="challenges">
-            <ChallengesView />
+            <Challenges />
           </TabsContent>
           <TabsContent value="friends">
             <div className="p-8 text-center text-4xl">Coming Soon</div>

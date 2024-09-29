@@ -6,9 +6,13 @@ import flagPath from "@/assets/flag.svg";
 import trophyPath from "@/assets/trophy.svg";
 import { Badge } from "@/components/ui/badge";
 
-export const ChallengesView = () => {
+type ChallengeViewProps = {
+  onClickChallenge: () => void;
+};
+
+export const ChallengesView = ({ onClickChallenge }: ChallengeViewProps) => {
   return (
-    <>
+    <div className="pb-8">
       <div>
         <div className="flex items-center gap-4 justify-between bg-[#3F320D] rounded-[5px] py-1 px-3 border border-primary">
           <p className="text-xs">
@@ -89,10 +93,13 @@ export const ChallengesView = () => {
       </div>
 
       <div className="mt-8">
-        <h3 className="text-xl font-bold mb-3">All Challanges</h3>
+        <h3 className="text-xl font-bold mb-3">All Challenges</h3>
 
         <div className="flex flex-col gap-4 mt-3">
-          <div className="p-[1px] bg-gradient-to-r from-[#9A9A9A] to-destructive rounded-xl">
+          <div
+            onClick={onClickChallenge}
+            className="p-[1px] bg-gradient-to-r from-[#9A9A9A] to-destructive rounded-xl cursor-pointer"
+          >
             <div className="bg-background rounded-xl pt-4 px-3 pb-3 flex items-end justify-between">
               <div>
                 <Badge variant="destructive" className="mb-1">
@@ -136,7 +143,10 @@ export const ChallengesView = () => {
               </div>
             </div>
           </div>
-          <div className="p-[1px] bg-gradient-to-r from-[#9A9A9A] to-success rounded-xl">
+          <div
+            onClick={onClickChallenge}
+            className="p-[1px] bg-gradient-to-r from-[#9A9A9A] cursor-pointer to-success rounded-xl"
+          >
             <div className="bg-background rounded-xl pt-4 px-3 pb-3 flex items-end justify-between">
               <div>
                 <Badge variant="success" className="mb-1">
@@ -180,7 +190,10 @@ export const ChallengesView = () => {
               </div>
             </div>
           </div>
-          <div className="p-[1px] bg-gradient-to-r from-[#9A9A9A] to-warning rounded-xl">
+          <div
+            onClick={onClickChallenge}
+            className="p-[1px] bg-gradient-to-r from-[#9A9A9A] cursor-pointer to-warning rounded-xl"
+          >
             <div className="bg-background rounded-xl pt-4 px-3 pb-3 flex items-end justify-between">
               <div>
                 <Badge variant="warning" className="mb-1">
@@ -226,6 +239,6 @@ export const ChallengesView = () => {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };

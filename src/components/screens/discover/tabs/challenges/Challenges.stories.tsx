@@ -13,4 +13,8 @@ export default meta;
 type Story = StoryObj<typeof ChallengesView>;
 
 // Basic story
-export const Default: Story = {};
+export const Default: Story = {
+  args: {
+    onClickChallenge: () => console.log("CLICKED"),
+  },
+};

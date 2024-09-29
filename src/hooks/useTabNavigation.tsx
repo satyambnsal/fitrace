@@ -15,7 +15,7 @@ export const useTabNavigation = () => {
     { path: "/dashboard", icon: HomeIcon, label: "Home" },
     { path: "/leaderboard", icon: GraphIcon, label: "Leaderboard" },
     { path: "/notifications", icon: ShoesIcon, label: "Notifications" },
-    { path: "/rules", icon: CompassIcon, label: "Rules" },
+    { path: "/discover", icon: CompassIcon, label: "Discover" },
     { path: "/settings", icon: PersonIcon, label: "Settings" },
   ];
 
@@ -24,7 +24,6 @@ export const useTabNavigation = () => {
   const handleTabClick = (path: string) => {
     navigate(path);
   };
-  console.log(location.pathname);
 
   return { tabs, shouldShowTabs, activeTab: location.pathname, handleTabClick };
 };
