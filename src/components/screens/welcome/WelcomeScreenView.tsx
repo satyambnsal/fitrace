@@ -1,6 +1,6 @@
 import backgroundImg from "@/assets/splash.png";
 import { Button } from "@/components/ui/button";
-import { TrackingPermissionModal } from "@/components/modals/TrackingPermissionModal";
+// import { TrackingPermissionModal } from "@/components/modals/TrackingPermissionModal";
 import { Logo } from "@/components/ui/logo";
 import { FEATURE_LIST_DATA } from "@/constants";
 
