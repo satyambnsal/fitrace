@@ -1,21 +1,19 @@
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Challenges } from "@/components";
-
-const TABS_TRIGGER_CLASSES =
-  "bg-[#303030] border-none h-[35px] rounded-[20px] text-white data-[state=active]:bg-white data-[state=active]:text-black px-6 py-1";
+import { TABS_TRIGGER_CLASSESV1 } from "@/constants";
 
 export const DiscoverView = () => {
   return (
     <div className="text-left">
       <Tabs defaultValue="challenges">
         <TabsList className="flex items-center gap-3">
-          <TabsTrigger value="challenges" className={TABS_TRIGGER_CLASSES}>
+          <TabsTrigger value="challenges" className={TABS_TRIGGER_CLASSESV1}>
             Challanges
           </TabsTrigger>
-          <TabsTrigger value="friends" className={TABS_TRIGGER_CLASSES}>
+          <TabsTrigger value="friends" className={TABS_TRIGGER_CLASSESV1}>
             Friends
           </TabsTrigger>
-          <TabsTrigger value="feed" className={TABS_TRIGGER_CLASSES}>
+          <TabsTrigger value="feed" className={TABS_TRIGGER_CLASSESV1}>
             Feed
           </TabsTrigger>
         </TabsList>

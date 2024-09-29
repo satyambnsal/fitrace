@@ -19,3 +19,4 @@ export { ShoesInfoModal } from "@/components/modals/shoesInfoModal/ShoesInfoModa
 export { Challenges } from "@/components/screens/discover/tabs/challenges/Challenges";
 export { Discover } from "@/components/screens/discover/Discover";
 export { Challenge } from "@/components/screens/discover/tabs/challenges/challenge/Challenge";
+export { JoinedWaitlistModal } from "@/components/modals/joinedWaitlistModal/JoinedWaitlistModal";

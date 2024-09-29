@@ -9,6 +9,9 @@ import compassWhitePath from "@/assets/compassWhite.svg";
 export const SAMPLE_PROFILE_URL =
   "https://img.freepik.com/free-photo/back-view-serious-man_23-2148946211.jpg?t=st=1727355594~exp=1727356194~hmac=f60762afae611df89dfe8681c056432b6e60d59f726d4bb5d3e0c5ac755e8991";
 
+export const TABS_TRIGGER_CLASSESV1 =
+  "bg-[#303030] border-none h-[35px] rounded-[20px] text-white data-[state=active]:bg-white data-[state=active]:text-black px-6 py-1";
+
 export const TOKEN_BADGES_DATA = [
   {
     tokenSymbol: "STRK",
@@ -50,6 +53,93 @@ export const FEATURE_LIST_DATA = [
 ];
 
 export const LEADERBOARD_PLAYERS = [
+  {
+    name: "Alex Starling",
+    rank: 1,
+    steps: "15,342",
+    profileUrl: SAMPLE_PROFILE_URL,
+    frtToken: "15,342",
+  },
+  {
+    name: "Alex Starling",
+    rank: 2,
+    steps: "15,342",
+    profileUrl: SAMPLE_PROFILE_URL,
+    frtToken: "15,342",
+  },
+
+  {
+    name: "Alex Starling",
+    rank: 3,
+    steps: "15,342",
+    profileUrl: SAMPLE_PROFILE_URL,
+    frtToken: "15,342",
+  },
+  {
+    name: "Alex Starling",
+    rank: 4,
+    steps: "25,342",
+    profileUrl: SAMPLE_PROFILE_URL,
+    frtToken: "25,342",
+  },
+
+  {
+    name: "Alex Starling",
+    rank: 5,
+    steps: "23,422",
+    profileUrl: SAMPLE_PROFILE_URL,
+    frtToken: "23,422",
+  },
+  {
+    name: "Alex Starling",
+    rank: 6,
+    steps: "15,342",
+    profileUrl: SAMPLE_PROFILE_URL,
+    frtToken: "15,342",
+  },
+
+  {
+    name: "Alex Starling",
+    rank: 7,
+    steps: "15,200",
+    profileUrl: SAMPLE_PROFILE_URL,
+    frtToken: "15,200",
+  },
+
+  {
+    name: "Alex Starling",
+    rank: 8,
+    steps: "10,242",
+    profileUrl: SAMPLE_PROFILE_URL,
+    frtToken: "10,242",
+  },
+
+  {
+    name: "Alex Starling",
+    rank: 9,
+    steps: "10,242",
+    profileUrl: SAMPLE_PROFILE_URL,
+    frtToken: "10,242",
+  },
+
+  {
+    name: "Alex Starling",
+    rank: 10,
+    steps: "10,242",
+    profileUrl: SAMPLE_PROFILE_URL,
+    frtToken: "10,242",
+  },
+
+  {
+    name: "Alex Starling",
+    rank: 11,
+    steps: "10,242",
+    profileUrl: SAMPLE_PROFILE_URL,
+    frtToken: "10,242",
+  },
+];
+
+export const JOINED_PARTICIPANTS = [
   {
     name: "Alex Starling",
     rank: 1,

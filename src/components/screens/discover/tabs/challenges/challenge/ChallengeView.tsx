@@ -4,12 +4,15 @@ import calendarPath from "@/assets/calendar.svg";
 import flagPath from "@/assets/flag.svg";
 import trophyPath from "@/assets/trophy.svg";
 import { Button } from "@/components/ui/button";
+import { JoinedWaitlistModal } from "@/components";
+import { JoinedParticipants } from "./components/JoinedParticipants";
 
 type ChallengeViewProps = {
   onBackClick: () => void;
+  status: "upcoming" | "started" | "ended";
 };
 
-export const ChallengeView = ({ onBackClick }: ChallengeViewProps) => {
+export const ChallengeView = ({ onBackClick, status }: ChallengeViewProps) => {
   return (
     <div className="text-left min-h-screen flex flex-col">
       <div className="h-[320px]">
@@ -30,10 +33,10 @@ export const ChallengeView = ({ onBackClick }: ChallengeViewProps) => {
         </div>
       </div>
 
-      <div className="px-4 py-6 flex flex-col justify-between gap-4 flex-1">
+      <div className="px-4 py-6 flex flex-col justify-between gap-10 flex-1">
         <div>
-          <p className="text-sm">Starts in 5 days</p>
-          <h2 className="text-[2rem] font-bold text-primary max-w-[300px]">
+          <p className="text-sm mb-2">Starts in 5 days</p>
+          <h2 className="text-[2rem] font-bold text-primary max-w-[300px] leading-tight">
             October Running Challenge
           </h2>
         </div>
@@ -75,9 +78,15 @@ export const ChallengeView = ({ onBackClick }: ChallengeViewProps) => {
         </div>
 
         <div>
-          <Button size="lg" className="w-full">
-            Join Waitlist
-          </Button>
+          {status === "upcoming" && (
+            <>
+              <p className="text-[15px] text-center mb-2 text-[#A19C9C]">
+                You've successfully joined the waitlist!
+              </p>
+              <JoinedWaitlistModal />
+            </>
+          )}
+          {status === "started" && <JoinedParticipants />}
         </div>
       </div>
     </div>
