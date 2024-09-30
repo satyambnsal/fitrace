@@ -12,5 +12,4 @@ const meta: Meta<typeof ShoesInfoModalView> = {
 export default meta;
 type Story = StoryObj<typeof ShoesInfoModalView>;
 
-// Basic story
 export const Default: Story = {};

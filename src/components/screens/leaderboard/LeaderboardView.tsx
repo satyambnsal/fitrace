@@ -1,8 +1,6 @@
-import { Button } from "@/components/ui/button";
 import {
   Table,
   TableBody,
-  TableCaption,
   TableCell,
   TableHead,
   TableHeader,
@@ -32,12 +30,6 @@ export const LeaderboardView = () => {
               <TabsTrigger value="steps">STEPS</TabsTrigger>
               <TabsTrigger value="token">FRT TOKEN</TabsTrigger>
             </TabsList>
-
-            {/* <Button className="rounded-[12px] min-h-[46px] w-full"></Button>
-            <Button
-              className="rounded-[12px] min-h-[46px] w-full text-primary"
-              variant="outline"
-            ></Button> */}
           </div>
           <div className="flex gap-2 justify-center text-center mt-6">
             <div className="pt-8">

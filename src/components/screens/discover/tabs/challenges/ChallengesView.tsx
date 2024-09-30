@@ -6,6 +6,7 @@ import flagPath from "@/assets/flag.svg";
 import trophyPath from "@/assets/trophy.svg";
 import { Badge } from "@/components/ui/badge";
 import { EarnBonusCard } from "@/components/screens/dashboard/components/EarnBonusCard";
+import { ChallengeCard } from "./components/ChallengeCard";
 
 type ChallengeViewProps = {
   onClickChallenge: () => void;
@@ -90,147 +91,26 @@ export const ChallengesView = ({ onClickChallenge }: ChallengeViewProps) => {
         <h3 className="text-xl font-bold mb-3">All Challenges</h3>
 
         <div className="flex flex-col gap-4 mt-3">
-          <div
-            onClick={onClickChallenge}
-            className="p-[1px] bg-gradient-to-r from-[#9A9A9A] to-destructive rounded-xl cursor-pointer"
-          >
-            <div className="bg-background rounded-xl pt-4 px-3 pb-3 flex items-end justify-between">
-              <div>
-                <Badge variant="destructive" className="mb-1">
-                  upcoming
-                </Badge>
+          <ChallengeCard
+            variant="destructive"
+            status="started"
+            buttonText="View Results"
+            onClickChallenge={onClickChallenge}
+          />
 
-                <h4 className="font-bold">Join October Running Challenge</h4>
+          <ChallengeCard
+            variant="success"
+            status="started"
+            buttonText="Join"
+            onClickChallenge={onClickChallenge}
+          />
 
-                <ul className="flex  flex-col text-muted">
-                  <li className="text-sm mb-1 flex items-center gap-1">
-                    <span className="mr-2">
-                      <img src={calendarPath} alt="calendar" />
-                    </span>
-                    <span>Oct 1 - Oct 30</span>
-                  </li>
-
-                  <li className="text-sm mb-1 flex items-center gap-1">
-                    <span className="mr-2">
-                      <img src={flagPath} alt="flag" />
-                    </span>
-                    <span>Complete 5km in a month</span>
-                  </li>
-
-                  <li className="text-sm mb-1 flex items-center gap-1">
-                    <span className="mr-2">
-                      <img src={trophyPath} alt="calendar" width={13} />
-                    </span>
-                    <span>Oct 1 - Oct 30</span>
-                  </li>
-                </ul>
-              </div>
-
-              <div>
-                <Button
-                  className="min-w-[112px] rounded-[5px] text-base font-semibold"
-                  variant="destructive"
-                  size="sm"
-                >
-                  View Results
-                </Button>
-              </div>
-            </div>
-          </div>
-          <div
-            onClick={onClickChallenge}
-            className="p-[1px] bg-gradient-to-r from-[#9A9A9A] cursor-pointer to-success rounded-xl"
-          >
-            <div className="bg-background rounded-xl pt-4 px-3 pb-3 flex items-end justify-between">
-              <div>
-                <Badge variant="success" className="mb-1">
-                  started
-                </Badge>
-
-                <h4 className="font-bold">Join October Running Challenge</h4>
-
-                <ul className="flex  flex-col text-muted">
-                  <li className="text-sm mb-1 flex items-center gap-1">
-                    <span className="mr-2">
-                      <img src={calendarPath} alt="calendar" />
-                    </span>
-                    <span>Oct 1 - Oct 30</span>
-                  </li>
-
-                  <li className="text-sm mb-1 flex items-center gap-1">
-                    <span className="mr-2">
-                      <img src={flagPath} alt="flag" />
-                    </span>
-                    <span>Complete 5km in a month</span>
-                  </li>
-
-                  <li className="text-sm mb-1 flex items-center gap-1">
-                    <span className="mr-2">
-                      <img src={trophyPath} alt="calendar" width={13} />
-                    </span>
-                    <span>Oct 1 - Oct 30</span>
-                  </li>
-                </ul>
-              </div>
-
-              <div>
-                <Button
-                  className="min-w-[112px] rounded-[5px] text-base font-semibold"
-                  variant="success"
-                  size="sm"
-                >
-                  Join
-                </Button>
-              </div>
-            </div>
-          </div>
-          <div
-            onClick={onClickChallenge}
-            className="p-[1px] bg-gradient-to-r from-[#9A9A9A] cursor-pointer to-warning rounded-xl"
-          >
-            <div className="bg-background rounded-xl pt-4 px-3 pb-3 flex items-end justify-between">
-              <div>
-                <Badge variant="warning" className="mb-1">
-                  ended
-                </Badge>
-
-                <h4 className="font-bold">Join October Running Challenge</h4>
-
-                <ul className="flex  flex-col text-muted">
-                  <li className="text-sm mb-1 flex items-center gap-1">
-                    <span className="mr-2">
-                      <img src={calendarPath} alt="calendar" />
-                    </span>
-                    <span>Oct 1 - Oct 30</span>
-                  </li>
-
-                  <li className="text-sm mb-1 flex items-center gap-1">
-                    <span className="mr-2">
-                      <img src={flagPath} alt="flag" />
-                    </span>
-                    <span>Complete 5km in a month</span>
-                  </li>
-
-                  <li className="text-sm mb-1 flex items-center gap-1">
-                    <span className="mr-2">
-                      <img src={trophyPath} alt="calendar" width={13} />
-                    </span>
-                    <span>Oct 1 - Oct 30</span>
-                  </li>
-                </ul>
-              </div>
-
-              <div>
-                <Button
-                  className="min-w-[112px] rounded-[5px] text-base font-semibold"
-                  variant="warning"
-                  size="sm"
-                >
-                  View Results
-                </Button>
-              </div>
-            </div>
-          </div>
+          <ChallengeCard
+            variant="warning"
+            status="ended"
+            buttonText="View Results"
+            onClickChallenge={onClickChallenge}
+          />
         </div>
       </div>
     </div>
