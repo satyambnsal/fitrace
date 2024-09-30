@@ -22,7 +22,7 @@ export const ChallengeView = ({ onBackClick, status }: ChallengeViewProps) => {
           className="w-full h-full object-cover"
         />
 
-        <div className="flex items-center justify-between absolute top-0 left-0 right-0 p-4">
+        <div className="flex items-center justify-between absolute top-0 left-0 right-0 px-4 pt-12">
           <button className="mt-4" onClick={onBackClick}>
             <ArrowLeft width={40} />
           </button>
