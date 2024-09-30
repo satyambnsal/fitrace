@@ -1,8 +1,22 @@
-export { GameScreen } from './screens/GameScreen'
-export { AccountScreen } from './screens/AccountScreen'
-export { Loader } from './Loader'
-export { ScanWallet } from './ScanWallet'
-export {BottomTabs} from "./BottomTabs"
-export {GameRules} from "./screens/GameRules"
-export {Settings} from "./screens/Settings"
-export {Layout} from "./Layout"
+export { GameScreen } from "./screens/GameScreen";
+export { AccountScreen } from "./screens/account/AccountScreen";
+export { Loader } from "./Loader";
+export { ScanWallet } from "./ScanWallet";
+export { TabBar } from "@/components/tabBar/TabBar";
+export { GameRules } from "./screens/GameRules";
+export { Settings } from "./screens/Settings";
+export { Layout } from "./Layout";
+export { Dashboard } from "./screens/dashboard/Dashboard";
+export { WelcomeScreen } from "@/components/screens/welcome/WelcomeScreen";
+export { Header } from "@/components/header/Header";
+export { Leaderboard } from "@/components/screens/leaderboard/Leaderboard";
+export { Notifications } from "@/components/screens/notifications/Notifications";
+export { CreatedWallet } from "@/components/screens/createdWallet/CreatedWallet";
+export { ExistingWallets } from "@/components/screens/existingWallets/ExistingWallets";
+export { FollowRequests } from "@/components/screens/followRequests/FollowRequests";
+export { TrackingPermissionModal } from "@/components/modals/trackPermissionModal/TrackingPermissionModal";
+export { ShoesInfoModal } from "@/components/modals/shoesInfoModal/ShoesInfoModal";
+export { Challenges } from "@/components/screens/discover/tabs/challenges/Challenges";
+export { Discover } from "@/components/screens/discover/Discover";
+export { Challenge } from "@/components/screens/discover/tabs/challenges/challenge/Challenge";
+export { JoinedWaitlistModal } from "@/components/modals/joinedWaitlistModal/JoinedWaitlistModal";
