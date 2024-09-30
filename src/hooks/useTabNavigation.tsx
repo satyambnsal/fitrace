@@ -14,7 +14,7 @@ export const useTabNavigation = () => {
   const tabs = [
     { path: "/dashboard", icon: HomeIcon, label: "Home" },
     { path: "/leaderboard", icon: GraphIcon, label: "Leaderboard" },
-    { path: "/notifications", icon: ShoesIcon, label: "Notifications" },
+    { path: "/sneakers", icon: ShoesIcon, label: "Sneakers" },
     { path: "/discover", icon: CompassIcon, label: "Discover" },
     { path: "/settings", icon: PersonIcon, label: "Settings" },
   ];

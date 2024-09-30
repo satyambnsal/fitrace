@@ -23,60 +23,78 @@ export const JoinedParticipants = () => {
           <div className="mt-6">
             <TabsContent value="everyone">
               <ul className="flex flex-col gap-3">
-                {JOINED_PARTICIPANTS.map((participant) => {
-                  return (
-                    <li
-                      className="flex items-center gap-3 bg-[#d9d9d908] ps-3 pr-5 py-2 rounded-xl"
-                      key={participant.rank}
-                    >
-                      <div className="w-[27px] h-[27px] rounded-full">
-                        <img
-                          src={participant.profileUrl}
-                          alt="profile"
-                          className="w-full h-full object-cover rounded-full"
-                        />
-                      </div>
+                {JOINED_PARTICIPANTS.length <= 0 ? (
+                  <h3 className="text-xl font-bold">
+                    Oops no one has joined the challenge . Invite your friends
+                    !!
+                  </h3>
+                ) : (
+                  <>
+                    {JOINED_PARTICIPANTS.map((participant) => {
+                      return (
+                        <li
+                          className="flex items-center gap-3 bg-[#d9d9d908] ps-3 pr-5 py-2 rounded-xl"
+                          key={participant.rank}
+                        >
+                          <div className="w-[27px] h-[27px] rounded-full">
+                            <img
+                              src={participant.profileUrl}
+                              alt="profile"
+                              className="w-full h-full object-cover rounded-full"
+                            />
+                          </div>
 
-                      <p className="font-bold">{participant.name}</p>
+                          <p className="font-bold">{participant.name}</p>
 
-                      <div className="text-right ms-auto">
-                        <p className="font-bold leading-tight">
-                          {participant.steps}
-                        </p>
-                        <p className="text-[10px] leading-tight">steps</p>
-                      </div>
-                    </li>
-                  );
-                })}
+                          <div className="text-right ms-auto">
+                            <p className="font-bold leading-tight">
+                              {participant.steps}
+                            </p>
+                            <p className="text-[10px] leading-tight">steps</p>
+                          </div>
+                        </li>
+                      );
+                    })}
+                  </>
+                )}
               </ul>
             </TabsContent>
             <TabsContent value="friends">
               <ul className="flex flex-col gap-3">
-                {JOINED_PARTICIPANTS.slice(0, 7).map((participant) => {
-                  return (
-                    <li
-                      className="flex items-center gap-3 bg-[#d9d9d908] ps-3 pr-5 py-2 rounded-xl"
-                      key={participant.rank}
-                    >
-                      <div className="w-[27px] h-[27px] rounded-full">
-                        <img
-                          src={participant.profileUrl}
-                          alt="profile"
-                          className="w-full h-full object-cover rounded-full"
-                        />
-                      </div>
+                {JOINED_PARTICIPANTS.length <= 0 ? (
+                  <h3 className="text-xl font-bold">
+                    Oops none of your friends has joined the challenge . Invite
+                    them !!
+                  </h3>
+                ) : (
+                  <>
+                    {JOINED_PARTICIPANTS.map((participant) => {
+                      return (
+                        <li
+                          className="flex items-center gap-3 bg-[#d9d9d908] ps-3 pr-5 py-2 rounded-xl"
+                          key={participant.rank}
+                        >
+                          <div className="w-[27px] h-[27px] rounded-full">
+                            <img
+                              src={participant.profileUrl}
+                              alt="profile"
+                              className="w-full h-full object-cover rounded-full"
+                            />
+                          </div>
 
-                      <p className="font-bold">{participant.name}</p>
+                          <p className="font-bold">{participant.name}</p>
 
-                      <div className="text-right ms-auto">
-                        <p className="font-bold leading-tight">
-                          {participant.steps}
-                        </p>
-                        <p className="text-[10px] leading-tight">steps</p>
-                      </div>
-                    </li>
-                  );
-                })}
+                          <div className="text-right ms-auto">
+                            <p className="font-bold leading-tight">
+                              {participant.steps}
+                            </p>
+                            <p className="text-[10px] leading-tight">steps</p>
+                          </div>
+                        </li>
+                      );
+                    })}
+                  </>
+                )}
               </ul>
             </TabsContent>
           </div>

@@ -5,6 +5,7 @@ import ethSymbolPath from "@/assets/ethSymbol.svg";
 import trophyPath from "@/assets/trophy.svg";
 import sneakerWhitePath from "@/assets/sneakerWhite.svg";
 import compassWhitePath from "@/assets/compassWhite.svg";
+import shoes2BgPath from "@/assets/shoes2Bg.png";
 
 export const SAMPLE_PROFILE_URL =
   "https://img.freepik.com/free-photo/back-view-serious-man_23-2148946211.jpg?t=st=1727355594~exp=1727356194~hmac=f60762afae611df89dfe8681c056432b6e60d59f726d4bb5d3e0c5ac755e8991";
@@ -258,5 +259,38 @@ export const REQUESTS_DATA = [
   {
     username: "bob",
     personImgUrl: SAMPLE_PROFILE_URL,
+  },
+];
+
+export const SNEAKERS_DATA = [
+  {
+    id: 1,
+    name: "runner #11",
+    imgUrl: shoes2BgPath,
+  },
+  {
+    id: 2,
+    name: "walker #12",
+    imgUrl: shoes2BgPath,
+  },
+  {
+    id: 3,
+    name: "runner #11",
+    imgUrl: shoes2BgPath,
+  },
+  {
+    id: 4,
+    name: "walker #11",
+    imgUrl: shoes2BgPath,
+  },
+  {
+    id: 5,
+    name: "runner #11",
+    imgUrl: shoes2BgPath,
+  },
+  {
+    id: 6,
+    name: "walker #11",
+    imgUrl: shoes2BgPath,
   },
 ];

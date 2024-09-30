@@ -3,16 +3,21 @@ import { ArrowLeft } from "lucide-react";
 import calendarPath from "@/assets/calendar.svg";
 import flagPath from "@/assets/flag.svg";
 import trophyPath from "@/assets/trophy.svg";
-import { Button } from "@/components/ui/button";
-import { JoinedWaitlistModal } from "@/components";
 import { JoinedParticipants } from "./components/JoinedParticipants";
+import { YourSteps } from "./components/YourSteps";
+import { JoinedWaitlistModal } from "@/components/modals/joinedWaitlistModal/JoinedWaitlistModal";
 
 type ChallengeViewProps = {
   onBackClick: () => void;
   status: "upcoming" | "started" | "ended";
+  isJoined: boolean;
 };
 
-export const ChallengeView = ({ onBackClick, status }: ChallengeViewProps) => {
+export const ChallengeView = ({
+  onBackClick,
+  status,
+  isJoined,
+}: ChallengeViewProps) => {
   return (
     <div className="text-left min-h-screen flex flex-col">
       <div className="h-[320px]">
@@ -40,6 +45,8 @@ export const ChallengeView = ({ onBackClick, status }: ChallengeViewProps) => {
             October Running Challenge
           </h2>
         </div>
+
+        {isJoined && <YourSteps />}
 
         <div>
           <ul className="flex  flex-col">
@@ -86,7 +93,11 @@ export const ChallengeView = ({ onBackClick, status }: ChallengeViewProps) => {
               <JoinedWaitlistModal />
             </>
           )}
-          {status === "started" && <JoinedParticipants />}
+          {status === "started" && (
+            <>
+              <JoinedParticipants />
+            </>
+          )}
         </div>
       </div>
     </div>

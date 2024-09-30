@@ -1,6 +1,5 @@
 export { GameScreen } from "./screens/GameScreen";
 export { AccountScreen } from "./screens/account/AccountScreen";
-export { Loader } from "./Loader";
 export { ScanWallet } from "./ScanWallet";
 export { TabBar } from "@/components/tabBar/TabBar";
 export { GameRules } from "./screens/GameRules";
@@ -20,3 +19,4 @@ export { Challenges } from "@/components/screens/discover/tabs/challenges/Challe
 export { Discover } from "@/components/screens/discover/Discover";
 export { Challenge } from "@/components/screens/discover/tabs/challenges/challenge/Challenge";
 export { JoinedWaitlistModal } from "@/components/modals/joinedWaitlistModal/JoinedWaitlistModal";
+export { Sneakers } from "@/components/screens/sneakers/Sneakers";

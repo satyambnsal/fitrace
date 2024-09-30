@@ -11,12 +11,20 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet";
 import frtTokenPath from "@/assets/frtToken.svg";
+import { Info } from "lucide-react";
 
 export const ShoesInfoModalView = () => {
   return (
     <Sheet>
       <SheetTrigger asChild>
-        <button>Open Sheet</button>
+        <Button
+          variant="secondary"
+          size="sm"
+          className="px-2 align-middle text-xs"
+        >
+          <Info width={14} className="mr-1" />
+          info
+        </Button>
       </SheetTrigger>
       <SheetContent side="bottom" className="pt-16 pb-8 px-8">
         <SheetHeader>
@@ -68,7 +76,7 @@ export const ShoesInfoModalView = () => {
             <div>
               <img src={frtTokenPath} alt="FRT Token" />
             </div>
-            <p className="text-xs">
+            <p className="text-xs text-white">
               Earn 2500 extra FRT while moving with this shoes!
             </p>
           </div>

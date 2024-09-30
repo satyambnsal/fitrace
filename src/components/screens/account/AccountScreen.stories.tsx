@@ -1,20 +1,9 @@
-import React from "react";
 import { Meta, StoryObj } from "@storybook/react";
 import { AccountScreenView } from "./AccountScreenView";
 
 const meta: Meta<typeof AccountScreenView> = {
   title: "Screens/Accounts",
   component: AccountScreenView,
-  parameters: {
-    layout: "fullscreen",
-  },
-  decorators: [
-    (Story) => (
-      <div className="min-w-[500px]">
-        <Story />
-      </div>
-    ),
-  ],
 };
 
 export default meta;
@@ -35,11 +24,5 @@ export const LoadingState: Story = {
       console.log("create accont");
     },
     isLoading: true,
-  },
-};
-
-export const ErrorState: Story = {
-  args: {
-    // Example: error: 'Failed to load dashboard data'
   },
 };

@@ -8,49 +8,12 @@ import { useDojo } from "./dojo/useDojo";
 import { DojoProvider } from "./dojo/DojoContext";
 import { dojoConfig } from "../dojoConfig";
 import { setup } from "./dojo/generated/setup";
-
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import {
-  GameScreen,
-  AccountScreen,
-  GameRules,
-  Settings,
-  Layout,
-  Dashboard,
-  WelcomeScreen,
-  Leaderboard,
-  Notifications,
-  CreatedWallet,
-  ExistingWallets,
-  FollowRequests,
-  Discover,
-  Challenge,
-} from "./components";
+import { Router } from "./router";
 
 type SetupResultType = Awaited<ReturnType<typeof setup>>;
 
 export const App = () => {
-  return (
-    <Router>
-      <Layout>
-        <Routes>
-          <Route path="/" element={<AccountScreen />} />
-          <Route path="/created-wallet" element={<CreatedWallet />} />
-          <Route path="/existing-wallets" element={<ExistingWallets />} />
-          <Route path="/dashboard" element={<Dashboard />} />
-          <Route path="/welcome" element={<WelcomeScreen />} />
-          <Route path="/home" element={<GameScreen />} />
-          <Route path="/leaderboard" element={<Leaderboard />} />
-          <Route path="/discover" element={<Discover />} />
-          <Route path="/challenge" element={<Challenge />} />
-          <Route path="/notifications" element={<Notifications />} />
-          <Route path="/follow-requests" element={<FollowRequests />} />
-          <Route path="/rules" element={<GameRules />} />
-          <Route path="/settings" element={<Settings />} />
-        </Routes>
-      </Layout>
-    </Router>
-  );
+  return <Router />;
 };
 // function MyApp() {
 //   const [setupResult, setSetupResult] = useState<SetupResultType>({} as SetupResultType)

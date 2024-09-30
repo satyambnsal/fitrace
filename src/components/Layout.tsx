@@ -11,11 +11,9 @@ export const Layout: React.FC<LayoutProps> = ({ children }) => {
   const { shouldShowTabs } = useTabNavigation();
   return (
     <>
-      <div className="min-h-full text-white bg-background">
-        <div>
-          {children}
-          {shouldShowTabs && <TabBar />}
-        </div>
+      <div className="text-foreground bg-background">
+        {children}
+        {shouldShowTabs && <TabBar />}
       </div>
       <Toaster theme="dark" />
     </>

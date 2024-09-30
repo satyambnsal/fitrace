@@ -1,4 +1,3 @@
-import React from "react";
 import { Meta, StoryObj } from "@storybook/react";
 import { HeaderView } from "./HeaderView";
 
@@ -8,13 +7,6 @@ const meta: Meta<typeof HeaderView> = {
   parameters: {
     layout: "fullscreen",
   },
-  decorators: [
-    (Story) => (
-      <div className="min-w-[500px]">
-        <Story />
-      </div>
-    ),
-  ],
 };
 
 export default meta;
@@ -37,6 +29,5 @@ export const PermissionWarning: Story = {
     onLogoClick: () => console.log("HI"),
     title: "TITLE HERE",
     showTokens: true,
-    // showTokens?: boolean;
   },
 };

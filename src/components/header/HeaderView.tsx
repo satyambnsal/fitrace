@@ -4,7 +4,7 @@ import walletPath from "@/assets/wallet.svg";
 import yellowTriangleWarningPath from "@/assets/yellowTriangleWarning.svg";
 import { Button } from "@/components/ui/button";
 import { TOKEN_BADGES_DATA } from "@/constants";
-import { TrackingPermissionModal } from "@/components";
+import { TrackingPermissionModal } from "@/components/modals/trackPermissionModal/TrackingPermissionModal";
 
 type TokenBadgeProps = {
   tokenSymbol: string;
@@ -54,7 +54,7 @@ export const HeaderView = ({
   showTokens,
 }: HederViewProps) => {
   return (
-    <div className="fixed top-0 left-0 right-0 px-4 bg-background pb-2 shadow-[inset_0_-8px_8px_-8px_rgba(255,255,255,0.1)]">
+    <div className="fixed top-0 left-0 right-0 px-4 bg-background pb-2 shadow-[inset_0_-8px_8px_-8px_rgba(255,255,255,0.1)] z-10">
       <header className="flex items-center justify-between pb-4 pt-7 mt-4">
         {title ? (
           <h2 className="text-2xl">{title}</h2>

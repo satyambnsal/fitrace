@@ -8,6 +8,8 @@ import fireIconPath from "@/assets/fire.svg";
 import calendarPath from "@/assets/calendar.svg";
 import flagPath from "@/assets/flag.svg";
 import trophyPath from "@/assets/trophy.svg";
+import { SneakerCarousel } from "./components/SneakerCarousel";
+import { EarnBonusCard } from "./components/EarnBonusCard";
 
 type DashboardViewProps = {
   seeAllClick: () => void;
@@ -16,11 +18,11 @@ type DashboardViewProps = {
 export const DashboardView = ({ seeAllClick }: DashboardViewProps) => {
   return (
     <div className="text-start max-w-[500px] pb-8">
+      <SneakerCarousel />
       <div
-        className="p-4 min-h-[250px] rounded-lg flex flex-col justify-between bg-no-repeat bg-cover bg-bottom"
+        className="p-4 min-h-[250px] rounded-lg flex flex-col justify-between bg-no-repeat bg-cover bg-bottom mt-4"
         style={{ backgroundImage: `url(${shoes2BgPath})` }}
       >
-        <ShoesInfoModal />
         <div>
           <h2 className="text-2xl font-bold mt-0 mb-1">Get Your Shoes</h2>
           <p className="text-[11px]">
@@ -94,15 +96,9 @@ export const DashboardView = ({ seeAllClick }: DashboardViewProps) => {
           <h2 className="text-2xl">Challanges</h2>
           <button onClick={seeAllClick}>see all</button>
         </div>
-
-        <div className="flex items-center gap-4 justify-between bg-[#3F320D] rounded-[5px] py-1 px-3 border border-primary">
-          <p className="text-xs">
-            Earn bonus rewards by inviting friends to join challenges
-          </p>
-          <Button size="sm" className="px-5">
-            invite
-          </Button>
-        </div>
+        <EarnBonusCard
+          onInviteClick={() => console.log("Invite clicked in dashboard")}
+        />
 
         <div className="p-[1px] bg-gradient-to-r from-[#9A9A9A] to-[#308422] rounded-2xl mt-3">
           <div className="bg-background text-white p-4 rounded-2xl flex items-end justify-between">

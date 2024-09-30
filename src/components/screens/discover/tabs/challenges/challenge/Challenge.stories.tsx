@@ -23,5 +23,7 @@ type Story = StoryObj<typeof ChallengeView>;
 export const Default: Story = {
   args: {
     onBackClick: () => console.log("back clicked on story"),
+    status: "started",
+    isJoined: true,
   },
 };

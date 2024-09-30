@@ -5,6 +5,7 @@ import calendarPath from "@/assets/calendar.svg";
 import flagPath from "@/assets/flag.svg";
 import trophyPath from "@/assets/trophy.svg";
 import { Badge } from "@/components/ui/badge";
+import { EarnBonusCard } from "@/components/screens/dashboard/components/EarnBonusCard";
 
 type ChallengeViewProps = {
   onClickChallenge: () => void;
@@ -14,14 +15,7 @@ export const ChallengesView = ({ onClickChallenge }: ChallengeViewProps) => {
   return (
     <div className="pb-8">
       <div>
-        <div className="flex items-center gap-4 justify-between bg-[#3F320D] rounded-[5px] py-1 px-3 border border-primary">
-          <p className="text-xs">
-            Earn bonus rewards by inviting friends to join challenges
-          </p>
-          <Button size="sm" className="px-5">
-            invite
-          </Button>
-        </div>
+        <EarnBonusCard onInviteClick={() => console.log("invite clicked")} />
       </div>
 
       <div
