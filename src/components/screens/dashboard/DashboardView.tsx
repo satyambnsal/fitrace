@@ -1,8 +1,6 @@
 import { Button } from "@/components/ui/button";
-import shoes2BgPath from "@/assets/shoes2Bg.png";
 import stepsYellowImgPath from "@/assets/stepsYellow.png";
 import stepsBgPath from "@/assets/stepsBg.png";
-import { ShoesInfoModal } from "@/components";
 import locationIconPath from "@/assets/locationGreen.svg";
 import fireIconPath from "@/assets/fire.svg";
 import calendarPath from "@/assets/calendar.svg";
@@ -10,6 +8,7 @@ import flagPath from "@/assets/flag.svg";
 import trophyPath from "@/assets/trophy.svg";
 import { SneakerCarousel } from "./components/SneakerCarousel";
 import { EarnBonusCard } from "./components/EarnBonusCard";
+import { GetYourShoesCard } from "./components/GetYourShoesCard";
 
 type DashboardViewProps = {
   seeAllClick: () => void;
@@ -19,27 +18,7 @@ export const DashboardView = ({ seeAllClick }: DashboardViewProps) => {
   return (
     <div className="text-start max-w-[500px] pb-8">
       <SneakerCarousel />
-      <div
-        className="p-4 min-h-[250px] rounded-lg flex flex-col justify-between bg-no-repeat bg-cover bg-bottom mt-4"
-        style={{ backgroundImage: `url(${shoes2BgPath})` }}
-      >
-        <div>
-          <h2 className="text-2xl font-bold mt-0 mb-1">Get Your Shoes</h2>
-          <p className="text-[11px]">
-            Own shoes to unlock more rewards while moving!
-          </p>
-        </div>
-
-        <div>
-          <Button
-            variant="secondary"
-            size="sm"
-            className="min-w-[121px] min-h-[31px]"
-          >
-            Buy
-          </Button>
-        </div>
-      </div>
+      <GetYourShoesCard />
 
       <div className="mt-4 flex flex-col gap-4">
         <div className="grid grid-cols-2 gap-3">

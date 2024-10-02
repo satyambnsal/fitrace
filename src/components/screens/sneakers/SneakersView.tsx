@@ -16,13 +16,13 @@ import frtTokenPath from "@/assets/frtToken.svg";
 export const SneakersView = () => {
   return (
     <ul className="grid grid-cols-2 gap-5 mt-8 pb-4">
-      {SNEAKERS_DATA.map((sneaker) => {
+      {SNEAKERS_DATA.map((sneaker, index) => {
         return (
-          <Sheet>
+          <Sheet key={sneaker.id}>
             <SheetTrigger asChild>
               <li
-                key={sneaker.id}
-                className="border border-[#CBE0FF] rounded p-1"
+                className="border border-[#CBE0FF] rounded p-1 animate-bounceFadeIn"
+                style={{ animationDelay: `${index * 100}ms` }}
               >
                 <div className="h-[185px] w-full">
                   <img

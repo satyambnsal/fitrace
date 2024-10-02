@@ -1,6 +1,8 @@
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Challenges } from "@/components";
 import { TABS_TRIGGER_CLASSESV1 } from "@/constants";
+import { Feed } from "./tabs/feed/Feed";
+import { Friends } from "./tabs/friends/Friends";
 
 export const DiscoverView = () => {
   return (
@@ -22,10 +24,10 @@ export const DiscoverView = () => {
             <Challenges />
           </TabsContent>
           <TabsContent value="friends">
-            <div className="p-8 text-center text-4xl">Coming Soon</div>
+            <Feed />
           </TabsContent>
           <TabsContent value="feed">
-            <div className="p-8 text-center text-4xl">Coming Soon</div>
+            <Friends />
           </TabsContent>
         </div>
       </Tabs>

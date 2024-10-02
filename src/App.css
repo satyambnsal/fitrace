@@ -75,3 +75,25 @@ body{
       transform: translateX(0);
     }
   }
+  @keyframes bounceFadeIn {
+    0% {
+      opacity: 0;
+      transform: translateY(40px);
+    }
+    50% {
+      opacity: 1;
+    }
+    70% {
+      transform: translateY(-8px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .animate-bounceFadeIn {
+    animation: bounceFadeIn 1.2s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+    transform: translateY(40px);
+    opacity: 0;
+  }

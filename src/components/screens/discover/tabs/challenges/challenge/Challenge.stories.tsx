@@ -8,13 +8,6 @@ const meta: Meta<typeof ChallengeView> = {
   parameters: {
     layout: "fullscreen",
   },
-  decorators: [
-    (Story) => (
-      <div className="min-w-[500px]">
-        <Story />
-      </div>
-    ),
-  ],
 };
 
 export default meta;
